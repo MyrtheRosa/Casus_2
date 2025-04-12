@@ -8,8 +8,8 @@ const handleScroll = () => {
   const hero = document.getElementById('hero');
   const scrollY = window.scrollY;
   const maxHeight = window.innerHeight;
-  const minHeight = 120;
-  const speed = 0.8;
+  const minHeight = 0;
+  const speed = 2;
 
   const newHeight = Math.max(maxHeight - (scrollY * speed), minHeight);
 
@@ -47,7 +47,7 @@ nav {
 }
 
 .bg-antraciet {
-  background-color: #2d2d2d;
+  background-color: rgba(44, 44, 44, 1);
   
 }
 
@@ -61,19 +61,19 @@ nav {
 
 
 main {
-  padding-top: 16rem;
+  padding-top: 14rem;
 }
 </style>
 
 <template>
   <main>
     <div class="bg-white">
-      <header class="absolute inset-x-0 top-0 z-50">
+      <header class="fixed inset-x-0 top-0 z-50">
         <!-- Hero section -->
-        <section id="hero" class="relative h-screen bg-cover bg-center transition-all duration-500"
+        <section id="hero" class="relative h-screen bg-cover bg-center transition-all duration-400"
           style="background-image: url('/images/homebackground.jpeg')">
           <!-- Overlay om de afbeelding donkerder te maken -->
-          <div class="absolute inset-0 bg-black opacity-75 z-0"></div>
+          <div class="absolute inset-0 bg-black opacity-85 z-0"></div>
 
           <!-- Navbar, sticky bovenaan het scherm -->
           <nav class="sticky top-0 z-10 flex items-center justify-between p-10 lg:px-8 text-white bg-transparent">
@@ -135,8 +135,8 @@ main {
           </div>
         </div>
       </header>
-
-      <section class="relative px-8 pt-10 lg:px-8 mt-36">
+      <div class="pt-[14rem]">
+      <section class="relative px-8 pt-6 lg:px-8 mt-36">
         <div class="mx-auto max-w-6xl py-32 sm:py-48 lg:py-56">
           <!-- Flex container die de tekst centreert (zowel verticaal als horizontaal) -->
           <div class="flex items-center justify-center h-full">
@@ -160,15 +160,20 @@ main {
                 enkel op de eigen discipline wordt gelet en er zo uitvoerings-fouten ontstaan. Door met u uw wensen en
                 de ideeën door te spreken, kunnen we gezamenlijk tot een praktisch (en financieel) haalbaar plan komen.
 
+                <br>
+                <br>
                 Heeft u interesse of vragen? Leg het mij voor aan de hand van de contactgegevens onder het kopje
-                “Contact“.
+                "Contact".
 
+                <br>
+                <br>
                 U bent altijd welkom bij Allround Dienstverlening Willemsen, gevestigd in Oud-Dronten.
               </p>
             </div>
           </div>
         </div>
       </section>
+    </div>
 
       <!-- IDEK wat dit is tbf -->
       <div
