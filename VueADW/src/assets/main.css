@@ -1,2 +1,59 @@
 @import "./base.css";
 @import "tailwindcss";
+
+/* Algemene styling voor de menu-items */
+.menu-item {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+/* Onderlijn - van links naar rechts bij hover */
+.menu-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #48bb78;
+  transition: width 0.3s ease;
+}
+
+/* Bovenlijn - van rechts naar links bij hover */
+.menu-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #48bb78;
+  transition: width 0.3s ease;
+}
+
+/* Hover effect: onderlijn van links naar rechts en bovenlijn van rechts naar links */
+.menu-item:hover::after {
+  width: 100%;
+}
+
+.menu-item:hover::before {
+  width: 100%;
+  left: 0;
+  right: initial;
+}
+
+/* Tekstkleur veranderen bij hover */
+.menu-item:hover {
+  color: #48bb78;
+}
+
+/* De lijnen moeten terugkeren naar hun oorspronkelijke staat wanneer je niet meer over het item heen beweegt */
+.menu-item:not(:hover)::after {
+  width: 0;
+}
+
+.menu-item:not(:hover)::before {
+  width: 0;
+}
