@@ -40,31 +40,28 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-/* Algemene styling voor de navbar */
+
 nav {
   transition: background-color 0.2s ease-in-out;
-  /* Zorg voor een soepele overgang voor de achtergrondkleur */
+ 
 }
 
 .bg-antraciet {
   background-color: #2d2d2d;
-  /* Antraciet kleur voor navbar */
+  
 }
 
 .bg-transparent {
   background-color: rgba(45, 45, 45, 0.5);
-  /* Transparante achtergrond voor navbar */
 }
 
-/* Hero-afbeelding die responsief is en zich aanpast aan scroll */
 #hero {
   transition: height 0.2s ease-in-out;
 }
 
-/* Verhoog de padding-top voor de main sectie om de tekst verder naar beneden te schuiven */
+
 main {
   padding-top: 16rem;
-  /* Verhoog de padding-top naar 250px om de tekst verder naar beneden te krijgen */
 }
 </style>
 
@@ -173,8 +170,7 @@ main {
         </div>
       </section>
 
-
-
+      <!-- IDEK wat dit is tbf -->
       <div
         class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
         aria-hidden="true">
