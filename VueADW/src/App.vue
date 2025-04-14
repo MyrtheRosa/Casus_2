@@ -73,7 +73,7 @@ main {
         <section id="hero" class="relative h-screen bg-cover bg-center transition-all duration-400"
           style="background-image: url('/images/homebackground.jpeg')">
           <!-- Overlay om de afbeelding donkerder te maken -->
-          <div class="absolute inset-0 bg-black opacity-85 z-0"></div>
+          <div class="absolute inset-0 bg-black opacity-65 z-0"></div>
 
           <!-- Navbar, sticky bovenaan het scherm -->
           <nav class="sticky top-0 z-10 flex items-center justify-between p-10 lg:px-8 text-white bg-transparent">
