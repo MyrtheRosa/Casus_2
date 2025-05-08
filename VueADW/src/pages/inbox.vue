@@ -6,8 +6,17 @@
   </template>
   
   <script>
+  fetch('http://localhost:8000/api/contacts')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+  })
+  .catch(error => {
+    console.error('Error:', error)
+  })
+
   export default {
-    name: 'inbox'
+    name: 'inbox' 
   }
   </script>
   
