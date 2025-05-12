@@ -1,22 +1,29 @@
-<template>
-    <div>
-      <h1>Inbox</h1>
-      <p>This is the inbox page.</p>
-    </div>
-  </template>
-  
-  <script>
-  fetch('http://localhost:8000/api/contacts')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
-  })
-  .catch(error => {
-    console.error('Error:', error)
-  })
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import contactlist from '../components/contactlist.vue'
 
-  export default {
-    name: 'inbox' 
+const contacts = ref([])
+const router = useRouter()
+
+onMounted(async () => {
+  try {
+    const res = await fetch('http://localhost:8000/api/contacts')
+    const data = await res.json()
+    contacts.value = data.filter(c => c.status !== 'closed')
+  } catch (error) {
+    console.error('Failed to fetch contacts:', error)
   }
-  </script>
-  
+})
+
+const goToContact = (id) => {
+  router.push(`/contacts/${id}`)
+}
+</script>
+
+<template>
+  <div>
+    <h2>Open Contacts</h2>
+    <contactlist />
+  </div>
+</template>

@@ -20,4 +20,15 @@ class ContactController extends Controller
     {
         return response()->json(contacts::all(), 200);
     }
+
+    public function show($id)
+    {
+        $contact = contacts::find($id);
+
+        if (!$contact) {
+            return response()->json(['message' => 'Contact not found'], 404);
+        }
+
+        return response()->json($contact);
+    }
 }
