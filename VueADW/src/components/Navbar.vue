@@ -12,7 +12,7 @@ nav {
 }
 
 .bg-transparent {
-  background-color: rgba(45, 45, 45, 0.5);
+  background-color: rgba(44, 44, 44, 0.9);
 }
 
 #hero {
@@ -36,12 +36,12 @@ main {
     </a>
 </div>
 <div class="hidden lg:flex lg:gap-x-12 cursor-pointer">
-    <a href="#" class="menu-item text-xl font-semibold">Home</a>
+    <a href="/" class="menu-item text-xl font-semibold">Home</a>
     <a href="#" class="menu-item text-xl font-semibold">Diensten</a>
     <a href="#" class="menu-item text-xl font-semibold">Contact</a>
 </div>
 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-    <a href="#" class="menu-item text-lg font-semibold">Log in <span aria-hidden="true">&rarr;</span></a>
+    <a href="/login" class="menu-item text-xl font-semibold">Log in <span aria-hidden="true">&rarr;</span></a>
 </div>
 </nav>
 </template>
