@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import contactlist from '../components/contactlist.vue'
+import contactlist from './contactlist.vue'
 
 const contacts = ref([])
 const router = useRouter()
