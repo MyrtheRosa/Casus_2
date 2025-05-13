@@ -6,3 +6,4 @@ use App\Http\Controllers\ContactController;
 
 Route::post('/contacts', [ContactController::class, 'store']);
 Route::get('/contacts', [ContactController::class, 'index']);
+Route::get('/contacts/{id}', [ContactController::class, 'show']);
