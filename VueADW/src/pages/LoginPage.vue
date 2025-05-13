@@ -37,20 +37,20 @@
                   <label for="password" class="block text-lg leading-7 font-medium text-gray-900">
                     Password
                   </label>
-                  <div class="text-sm">
-                    <a href="#" class="font-semibold text-green-600 hover:text-green-500">
-                      Forgot password?
-                    </a>
-                  </div>
                 </div>
                 <div class="mt-3">
-                  <input
+                    <input
                     type="password"
                     name="password"
                     id="password"
                     required
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-600 sm:text-sm leading-6"
-                  />
+                    />
+                </div>
+                <div class="text-sm">
+                  <a href="#" class="font-semibold gap-2 text-green-600 hover:text-green-500">
+                    Forgot password?
+                  </a>
                 </div>
               </div>
   
