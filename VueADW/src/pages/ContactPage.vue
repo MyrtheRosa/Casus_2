@@ -99,7 +99,7 @@
                                 </button>
                             </div>
                             <label class="text-sm text-gray-600" id="switch-1-label">
-                                By selecting this, you agree to our
+                                Door dit te selecteren, accepteert u onze 
                                 <a href="#" class="font-semibold text-green-600">terms&nbsp;of&nbsp;service</a>.
                             </label>
                         </div>
@@ -118,7 +118,7 @@
                     Vragen? Neem contact op!
                 </h2>
                 <p class="mt-2 text-lg leading-22 text-gray-600">
-                    Ik ben bereikbaar tussen ... en ...
+                    Ik ben bereikbaar tussen 8:00 en 18:00
                 </p>
                 <p class="mt-0 text-lg text-gray-600">
                     Heb je een vraag, een idee voor samenwerking, of wil je gewoon even sparren? Stuur me gerust een
