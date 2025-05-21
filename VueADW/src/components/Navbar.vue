@@ -1,4 +1,6 @@
-<!-- Navbar, sticky bovenaan het scherm -->
+<script>
+import LoginPage from '@/pages/LoginPage.vue';
+</script>
 <style scoped>
 
 nav {
@@ -41,7 +43,7 @@ main {
     <a href="#" class="menu-item text-xl font-semibold">Contact</a>
 </div>
 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-    <a href="/login" class="menu-item text-xl font-semibold">Log in <span aria-hidden="true">&rarr;</span></a>
+    <a href="LoginPage" class="menu-item text-xl font-semibold">Log in <span aria-hidden="true">&rarr;</span></a>
 </div>
 </nav>
 </template>
