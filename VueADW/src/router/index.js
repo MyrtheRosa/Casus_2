@@ -1,18 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import inbox from '../pages/inbox.vue'
+import inbox from '../pages/InboxPage.vue'
 import home from '../pages/home.vue'
 import ContactDetail from '@/pages/ContactDetail.vue'
 import LoginPage from '@/pages/LoginPage.vue'
-import Dienst from '@/pages/dienst.vue'
+import Dienst from '@/pages/DienstPage.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/HomePage',
     name: 'home',
     component: home
   },
   {
-    path: '/inbox',
+    path: '/InboxPage',
     name: 'inbox',
     component: inbox
   },
