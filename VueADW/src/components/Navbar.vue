@@ -40,7 +40,7 @@ main {
 <div class="hidden lg:flex lg:gap-x-12 cursor-pointer">
     <a href="/" class="menu-item text-xl font-semibold">Home</a>
     <a href="#" class="menu-item text-xl font-semibold">Diensten</a>
-    <a href="#" class="menu-item text-xl font-semibold">Contact</a>
+    <a href="/contact" class="menu-item text-xl font-semibold">Contact</a>
 </div>
 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
     <a href="LoginPage" class="menu-item text-xl font-semibold">Log in <span aria-hidden="true">&rarr;</span></a>
