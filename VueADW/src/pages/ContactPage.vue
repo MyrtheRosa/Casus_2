@@ -91,7 +91,7 @@
                         <div class="flex gap-x-4 sm:col-span-2">
                             <div class="flex h-6.5 items-center">
                                 <button type="button" @click="toggleAgreement" :class="[
-                                    'flex w-8 h-5.2 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset transition-colors duration-200 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2',
+                                    'flex w-8 h-4.5 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset transition-colors duration-200 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2',
                                     agreed ? 'bg-green-600 ring-green-600' : 'bg-gray-200 ring-gray-900/5'
                                 ]" role="switch" :aria-checked="agreed.toString()" aria-labelledby="switch-1-label">
                                     <span class="sr-only">Agree to policies</span>
