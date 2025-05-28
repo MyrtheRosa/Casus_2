@@ -1,20 +1,41 @@
-// src/router/routes.js
-import { createRouter, createWebHistory } from "vue-router";
-
-const HomePage = () => import("../pages/HomePage.vue");
-const LoginPage = () => import("../pages/LoginPage.vue");
-const ContactPage = () => import("../pages/ContactPage.vue");
+import { createRouter, createWebHistory } from 'vue-router'
+import InboxPage from '../pages/InboxPage.vue'
+import HomePage from '../pages/HomePage.vue'
+import ContactDetail from '@/pages/ContactDetail.vue'
+import LoginPage from '@/pages/LoginPage.vue'
+import Dienst from '@/pages/DienstPage.vue'
 
 const routes = [
-  { path: "/", name: "Home", component: HomePage },
-  { path: "/Login", name: "Login", component: LoginPage },
-  { path: "/Contact", name: "Contact", component: ContactPage },
-  // Add more routes as needed
+  {
+    path: '/',
+    name: 'HomePage',
+    component: HomePage
+  },
+  {
+    path: '/InboxPage',
+    name: 'inbox',
+    component: InboxPage
+  },
+    {
+    path: '/contacts/:id',
+    name: 'ContactDetail',
+    component: ContactDetail
+  },
+   {
+    path: '/LoginPage',
+    name: 'Login',
+    component: LoginPage
+  },
+  {
+    path: '/dienst',
+    name: 'dienst',
+    component: Dienst 
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router
