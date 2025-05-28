@@ -5,7 +5,7 @@
     <p>Phone: {{ contact.phone }}</p>
     <p>Message: {{ contact.message }}</p>
     <p>Status: {{ contact.status }}</p>
-    <!-- Add more fields as needed -->
+
   </div>
   <div v-else>
     <p>Loading contact details...</p>
