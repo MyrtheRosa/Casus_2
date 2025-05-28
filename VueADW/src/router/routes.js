@@ -7,6 +7,7 @@ import ContactDetail from '@/pages/ContactDetail.vue'
 import LoginPage from '@/pages/LoginPage.vue'
 import Dienst from '@/pages/DienstPage.vue'
 import ContactPage from '@/pages/ContactPage.vue'
+const PrivacyPolicy = () => import('../pages/PrivacyPolicy.vue');
 
 const routes = [
   {

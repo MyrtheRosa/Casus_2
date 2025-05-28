@@ -21,8 +21,7 @@
         <div>
           <h4 class="text-xl font-semibold mb-3">Support</h4>
           <ul class="text-lg space-y-2 text-gray-400">
-            <li><a href="#" class="hover:text-green-600">Help Center</a></li>
-            <li><a href="#" class="hover:text-green-600">Privacy Policy</a></li>
+            <li><a href="/PrivacyPolicy" class="hover:text-green-600">Privacy Policy</a></li>
             <li><a href="#" class="hover:text-green-600">Terms of Service</a></li>
           </ul>
         </div>
