@@ -89,20 +89,26 @@
                         </div>
 
                         <div class="flex gap-x-4 sm:col-span-2">
-                            <div class="flex h-6 items-center">
-                                <button type="button"
-                                    class="flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                    role="switch" aria-checked="false" aria-labelledby="switch-1-label">
+                            <div class="flex h-6.5 items-center">
+                                <button type="button" @click="toggleAgreement" :class="[
+                                    'flex w-8 h-5.2 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset transition-colors duration-200 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2',
+                                    agreed ? 'bg-green-600 ring-green-600' : 'bg-gray-200 ring-gray-900/5'
+                                ]" role="switch" :aria-checked="agreed.toString()" aria-labelledby="switch-1-label">
                                     <span class="sr-only">Agree to policies</span>
-                                    <span aria-hidden="true"
-                                        class="size-4 translate-x-0 transform rounded-full bg-white shadow ring-1 ring-gray-900/5 transition duration-200 ease-in-out"></span>
+                                    <span aria-hidden="true" :class="[
+                                        'size-4 transform rounded-full bg-white shadow ring-1 ring-gray-900/5 transition duration-200 ease-in-out',
+                                        agreed ? 'translate-x-[16px]' : 'translate-x-0'
+                                    ]"></span>
                                 </button>
                             </div>
                             <label class="text-sm text-gray-600" id="switch-1-label">
-                                Door dit te selecteren, accepteert u onze 
-                                <a href="#" class="font-semibold text-green-600">terms&nbsp;of&nbsp;service</a>.
+                                Door dit te selecteren, accepteert u onze
+                                <a href="/TermsOfService"
+                                    class="font-semibold text-green-600">terms&nbsp;of&nbsp;service</a>.
                             </label>
                         </div>
+
+
                     </div>
 
                     <div class="mt-10">
@@ -130,8 +136,8 @@
                     ik hoor graag van je. Je kunt me bereiken via het contactformulier, of direct een e-mail sturen.
                     <br>
 
-                    Omdat ik alles zelf doe, kan het soms iets langer duren voor ik reageer, maar ik doe mijn best om
-                    binnen 1 werkdag te antwoorden.
+                    Omdat ik alles zelf doe, kan het soms iets langer duren voor ik reageer. Wel doe ik mijn best om
+                    binnen 1 werkdag te antwoorden!
                     <br>
                     -Wytse Willemsen.
                 </p>
@@ -139,3 +145,13 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+const agreed = ref(false)
+
+function toggleAgreement() {
+    agreed.value = !agreed.value
+}
+</script>
