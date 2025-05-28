@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar v-if="!isInboxPage" />
+    <Navbar />
     <RouterView />
     <Footer v-if="!isInboxPage" />
   </div>
@@ -14,7 +14,6 @@ import Footer from './components/Footer.vue'
 
 const route = useRoute()
 
-// Hide Navbar and Footer on InboxPage only
+// Hide ONLY the Footer on the InboxPage
 const isInboxPage = computed(() => route.name === 'InboxPage')
 </script>
-

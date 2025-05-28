@@ -1,7 +1,6 @@
 <template>
   <main class="bg-white flex items-center justify-center h-dvh overflow-hidden m-0">
-    <div
-      class="flex max-w-md mx-auto justify-center items-center border border-green-600 border-solid rounded-sm w-[500px]">
+    <div class="flex max-w-md mx-auto justify-center items-center border border-green-600 border-solid rounded-sm w-[500px]">
       <div class="flex flex-col justify-center gap-4 px-6 py-8 lg:px-8 w-full">
 
         <!-- Heading -->
@@ -78,7 +77,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 const email = ref('')
@@ -93,12 +92,18 @@ const router = useRouter()
 function handleLogin() {
   error.value = ''
   if (email.value === ADMIN_EMAIL && password.value === ADMIN_PASSWORD) {
-    // Save login state to localStorage
     localStorage.setItem('isLoggedIn', 'true')
     router.push({ name: 'InboxPage' })
   } else {
     error.value = 'Invalid email or password.'
   }
 }
-</script>
 
+// Redirect if already logged in
+onMounted(() => {
+  const isLoggedIn = localStorage.getItem('isLoggedIn')
+  if (isLoggedIn === 'true') {
+    router.push({ name: 'InboxPage' })
+  }
+})
+</script>

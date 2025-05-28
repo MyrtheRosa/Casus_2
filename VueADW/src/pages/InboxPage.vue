@@ -21,7 +21,7 @@ const goToContact = (id) => {
 }
 
 function logout() {
-  localStorage.removeItem('isLoggedIn')
+  localStorage.removeItem('isLoggedIn', 'true')
   router.push({ name: 'LoginPage' })
 }
 </script>
