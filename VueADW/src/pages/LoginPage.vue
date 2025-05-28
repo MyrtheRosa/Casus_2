@@ -95,7 +95,7 @@ function handleLogin() {
   if (email.value === ADMIN_EMAIL && password.value === ADMIN_PASSWORD) {
     // Save login state to localStorage
     localStorage.setItem('isLoggedIn', 'true')
-    router.push({ name: 'Inbox' })
+    router.push({ name: 'InboxPage' })
   } else {
     error.value = 'Invalid email or password.'
   }
