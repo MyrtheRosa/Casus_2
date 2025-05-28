@@ -3,7 +3,9 @@ import InboxPage from '../pages/InboxPage.vue'
 import HomePage from '../pages/HomePage.vue'
 import ContactDetail from '@/pages/ContactDetail.vue'
 import LoginPage from '@/pages/LoginPage.vue'
-import Dienst from '@/pages/DienstPage.vue'
+import DienstPage from '@/pages/DienstPage.vue'
+import ContactPage from '@/pages/ContactPage.vue'
+import PrivacyPolicy from '@/pages/PrivacyPolicy.vue'
 
 const routes = [
   {
@@ -13,24 +15,36 @@ const routes = [
   },
   {
     path: '/InboxPage',
-    name: 'inbox',
+    name: 'InboxPage',
     component: InboxPage
   },
-    {
+   {
     path: '/contacts/:id',
     name: 'ContactDetail',
     component: ContactDetail
   },
    {
     path: '/LoginPage',
-    name: 'Login',
+    name: 'LoginPage',
     component: LoginPage
   },
   {
-    path: '/dienst',
-    name: 'dienst',
-    component: Dienst 
+    path: '/DienstPage',
+    name: 'DienstPage',
+    component: DienstPage 
   },
+   {
+    path: '/ContactPage',
+    name: 'ContactPage',
+    component: ContactPage
+  },
+   {
+    path: '/PrivacyPolicy',
+    name: 'PrivacyPolicy',
+    component: PrivacyPolicy
+  },
+// src/router/routes.js
+
 ]
 
 const router = createRouter({
@@ -38,4 +52,5 @@ const router = createRouter({
   routes
 })
 
-export default router
+export default router;
+

@@ -32,7 +32,7 @@ main {
  <template>
 <nav class="sticky top-0 z-1000 flex items-center justify-between p-10 lg:px-8 text-white bg-transparent">
 <div class="flex lg:flex-1">
-    <a href="#" class="-m-1.5 p-1.5">
+    <a href="/" class="-m-1.5 p-1.5">
     <span class="sr-only">Your Company</span>
     <img class="h-8 w-auto"
         src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
