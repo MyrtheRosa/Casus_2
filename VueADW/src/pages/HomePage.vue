@@ -8,7 +8,7 @@ const handleScroll = () => {
   const scrollY = window.scrollY;
   const maxHeight = window.innerHeight;
   const minHeight = 0;
-  const speed = 2;
+  const speed = 3;
 
   const newHeight = Math.max(maxHeight - (scrollY * speed), minHeight);
 
@@ -94,43 +94,48 @@ onBeforeUnmount(() => {
         </div>
       </header>
       <div class="pt-[14rem]">
-      <section class="relative px-8 pt-6 lg:px-8 mt-36">
-        <div class="mx-auto max-w-6xl py-32 sm:py-48 lg:py-56">
-          <!-- Flex container die de tekst centreert (zowel verticaal als horizontaal) -->
-          <div class="flex items-center justify-center h-full">
-            <!-- Voeg padding toe voor wat buffer rondom de tekst -->
-            <div class="text-start w-full px-4">
-              <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">About ADW</h1>
-              <br>
-              <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl">
-                Dienstverlening Willemsen (ADW) is opgericht door mij, Wytse Willemsen, in februari 2016. ADW is
-                ontstaan door de verschillende uitgevoerde werkzaamheden. Zo ben ik in 2011 begonnen met tuinen
-                aanleggen bij een
-                bedrijf dat gespecialiseerd is in het leggen van kunstgras. Aan de hand van aantrekkende aanvragen voor
-                soortgelijke werkzaamheden, maar ook voor verschillende werkzaamheden in de agrarische sector, ben ik
-                voor mijzelf begonnen. Door de jaren heen heb ik vele disciplines aangeleerd, van (kunst)gras leggen en
-                bestrating, tot bezigheden in de bouw, loodgieterij en wereld van elektriciteit. Daarnaast heb ik een
-                interesse ontwikkelt in het uitdenken en aanleggen van tuinen.
+        <section class="relative px-8 pt-6 lg:px-8 mt-36">
+          <div class="mx-auto max-w-6xl py-32 sm:py-48 lg:py-56">
+            <!-- Flex container die de tekst centreert (zowel verticaal als horizontaal) -->
+            <div class="flex items-center justify-center h-full">
+              <!-- Voeg padding toe voor wat buffer rondom de tekst -->
+              <div class="text-start w-full px-4">
+                <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">About ADW</h1>
+                <br>
+                <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl">
+                  Allround Dienstverlening Willemsen (ADW) is opgericht door mij, Wytse Willemsen, in februari 2016. ADW
+                  is
+                  ontstaan door de verschillende uitgevoerde werkzaamheden. Zo ben ik in 2011 begonnen met tuinen
+                  aanleggen bij een
+                  bedrijf dat gespecialiseerd is in het leggen van kunstgras. Aan de hand van aantrekkende aanvragen
+                  voor
+                  soortgelijke werkzaamheden, maar ook voor verschillende werkzaamheden in de agrarische sector, ben ik
+                  voor mijzelf begonnen. Door de jaren heen heb ik vele disciplines aangeleerd, van (kunst)gras leggen
+                  en
+                  bestrating, tot bezigheden in de bouw, loodgieterij en wereld van elektriciteit. Daarnaast heb ik een
+                  interesse ontwikkelt in het uitdenken en aanleggen van tuinen.
 
-                Door deze achtergrond in veelzijdigheid, is het voor mij makkelijk geworden om integraal uw wensen uit
-                te denken en te combineren. Dit in tegenstelling tot bijvoorbeeld mijn ervaring in de bouw, waar (te)
-                vaak
-                enkel op de eigen discipline wordt gelet en er zo uitvoerings-fouten ontstaan. Door met u uw wensen en
-                de ideeën door te spreken, kunnen we gezamenlijk tot een praktisch (en financieel) haalbaar plan komen.
+                  Door deze achtergrond in veelzijdigheid, is het voor mij makkelijk geworden om integraal uw wensen uit
+                  te denken en te combineren. Dit in tegenstelling tot bijvoorbeeld mijn ervaring in de bouw, waar (te)
+                  vaak
+                  enkel op de eigen discipline wordt gelet en er zo uitvoerings-fouten ontstaan. Door met u uw wensen en
+                  de ideeën door te spreken, kunnen we gezamenlijk tot een praktisch (en financieel) haalbaar plan
+                  komen.
 
-                <br>
-                <br>
-                Heeft u interesse of vragen? Leg het mij voor aan de hand van de contactgegevens onder het kopje
-                "Contact".
-                <br>
-                <br>
-                U bent altijd welkom bij <a class="text-green-600">Allround Dienstverlening Willemsen</a>, gevestigd in Oud-Dronten.
-              </p>
+                  <br>
+                  <br>
+                  Heeft u interesse of vragen? Leg het mij voor aan de hand van de contactgegevens onder het kopje
+                  <a href="/contact" class="text-green-600 hover:text-green-500">"Contact"</a>.
+                  <br>
+                  <br>
+                  U bent altijd welkom bij <a class="text-green-600">Allround Dienstverlening Willemsen</a>, gevestigd
+                  in Oud-Dronten.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
 
       <!-- IDEK wat dit is tbf -->
       <div

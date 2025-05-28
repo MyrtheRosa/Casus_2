@@ -5,6 +5,7 @@ import ContactDetail from '@/pages/ContactDetail.vue'
 import LoginPage from '@/pages/LoginPage.vue'
 import DienstPage from '@/pages/DienstPage.vue'
 import ContactPage from '@/pages/ContactPage.vue'
+import PrivacyPolicy from '@/pages/PrivacyPolicy.vue'
 
 const routes = [
   {
@@ -37,6 +38,13 @@ const routes = [
     name: 'ContactPage',
     component: ContactPage
   },
+   {
+    path: '/PrivacyPolicy',
+    name: 'PrivacyPolicy',
+    component: PrivacyPolicy
+  },
+// src/router/routes.js
+
 ]
 
 const router = createRouter({
