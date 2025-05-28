@@ -7,7 +7,7 @@ import ContactDetail from '@/pages/ContactDetail.vue'
 import LoginPage from '@/pages/LoginPage.vue'
 import Dienst from '@/pages/DienstPage.vue'
 import ContactPage from '@/pages/ContactPage.vue'
-const PrivacyPolicy = () => import('../pages/PrivacyPolicy.vue');
+import PrivacyPolicy from '@/pages/PrivacyPolicy.vue'
 
 const routes = [
   {
@@ -39,6 +39,11 @@ const routes = [
     path: '/ContactPage',
     name: 'ContactPage',
     component: ContactPage
+  },
+    {
+    path: '/PrivacyPolicy',
+    name: 'PrivacyPolicy',
+    component: PrivacyPolicy
   },
 ]
 
