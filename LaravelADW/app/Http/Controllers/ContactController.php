@@ -9,8 +9,7 @@ class ContactController extends Controller
 {
     public function store(Request $request)
     {
-        // Optional: validate the request
-        // Save the contact message
+      
         $contact = contacts::create($request->all());
 
         return response()->json($contact, 201);
@@ -19,5 +18,16 @@ class ContactController extends Controller
     public function index()
     {
         return response()->json(contacts::all(), 200);
+    }
+
+    public function show($id)
+    {
+        $contact = contacts::find($id);
+
+        if (!$contact) {
+            return response()->json(['message' => 'Contact not found'], 404);
+        }
+
+        return response()->json($contact);
     }
 }
