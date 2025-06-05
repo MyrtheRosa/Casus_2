@@ -1,3 +1,4 @@
+
 <template>
   <div class="card">
     <div class="rectangle" :style="{ backgroundImage: 'url(urlhierx2yayay)' }">
