@@ -26,16 +26,24 @@ function logout() {
 }
 </script>
 
+
 <template>
-  <div class="max-w-4xl mx-auto px-4 py-12 text-gray-800">
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-bold">Inbox</h1>
-      <h2>Open Contacts</h2>
-      <contactlist />
-      <button @click="logout" class="cursor-pointer rounded bg-red-600 px-4 py-2 text-white hover:bg-red-500">
-        Logout
+  <div>
+    <h2 class="text-2xl font-bold mb-4">Open Contacts</h2>
+    <div
+      v-for="contact in contacts"
+      :key="contact.id"
+     class="p-8"
+    >
+      <h3 class="text-lg font-semibold">{{ contact.name }}</h3>
+      <p class="text-sm text-gray-700">Email: {{ contact.email }}</p>
+      <button
+        @click="goToContact(contact.id)"
+        class="mt-2 bg-blue-800 text-white px-4 py-1 rounded hover:bg-blue-600"
+      >
+        View Details
       </button>
     </div>
-    <p>Welcome, Admin! This is your inbox.</p>
   </div>
 </template>
+
