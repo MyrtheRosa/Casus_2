@@ -81,24 +81,13 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-const email = ref('')
-const password = ref('')
-const error = ref('')
+const login = ref({
+  email: '',
+  password: ''
+})
 
-const ADMIN_EMAIL = 'admin@adwdronten.nl'
-const ADMIN_PASSWORD = 'secureAdminPassword123'
 
 const router = useRouter()
 
-function handleLogin() {
-  error.value = ''
-  if (email.value === ADMIN_EMAIL && password.value === ADMIN_PASSWORD) {
-    // Save login state to localStorage
-    localStorage.setItem('isLoggedIn', 'true')
-    router.push({ name: 'Inbox' })
-  } else {
-    error.value = 'Invalid email or password.'
-  }
-}
 </script>
 

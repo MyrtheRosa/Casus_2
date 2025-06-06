@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
@@ -12,3 +13,7 @@ Route::get('/contacts/{id}', [ContactController::class, 'show']);
 Route::post('/diensten', [DienstController::class, 'store']);
 Route::get('/diensten', [DienstController::class, 'index']);
 Route::get('/diensten/{id}', [DienstController::class, 'show']);
+
+Route::post('/login', [LoginController::class, 'store']);
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login/{id}', [LoginController::class, 'show']);
