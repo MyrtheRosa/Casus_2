@@ -21,12 +21,12 @@
                 </div>
 
                 <!-- Contact Form -->
-                <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+                <form @submit.prevent="submitForm" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
                     <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                         <div>
                             <label for="first-name" class="block text-sm font-semibold text-gray-900">First name</label>
                             <div class="mt-2.5">
-                                <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                                <input v-model="form.name" type="text" name="first-name" id="first-name" autocomplete="given-name"
                                     class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-green-600" />
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                         <div>
                             <label for="last-name" class="block text-sm font-semibold text-gray-900">Last name</label>
                             <div class="mt-2.5">
-                                <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                                <input v-model="form.last_name" type="text" name="last-name" id="last-name" autocomplete="family-name"
                                     class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-green-600" />
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                         <div class="sm:col-span-2">
                             <label for="company" class="block text-sm font-semibold text-gray-900">Company</label>
                             <div class="mt-2.5">
-                                <input type="text" name="company" id="company" autocomplete="organization"
+                                <input v-model="form.company" type="text" name="company" id="company" autocomplete="organization"
                                     class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-green-600" />
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                         <div class="sm:col-span-2">
                             <label for="email" class="block text-sm font-semibold text-gray-900">Email</label>
                             <div class="mt-2.5">
-                                <input type="email" name="email" id="email" autocomplete="email"
+                                <input v-model="form.email" type="email" name="email" id="email" autocomplete="email"
                                     class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-green-600" />
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                                                 clip-rule="evenodd" />
                                         </svg>
                                     </div>
-                                    <input type="text" name="phone-number" id="phone-number"
+                                    <input v-model="form.mobile_number" type="text" name="phone-number" id="phone-number"
                                         class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm"
                                         placeholder="123-456-7890" />
                                 </div>
@@ -83,7 +83,7 @@
                         <div class="sm:col-span-2">
                             <label for="message" class="block text-sm font-semibold text-gray-900">Message</label>
                             <div class="mt-2.5">
-                                <textarea name="message" id="message" rows="4"
+                                <textarea v-model="form.message" name="message" id="message" rows="4"
                                     class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-green-600"></textarea>
                             </div>
                         </div>
@@ -139,3 +139,41 @@
         </div>
     </div>
 </template>
+<script setup>
+import { ref } from 'vue'
+
+const form = ref({
+  name: '',
+  last_name: '',
+  email: '',
+  mobile_number: '',
+  company: '',
+  message: ''
+})
+
+const submitForm = async () => {
+  try {
+    const response = await fetch('http://localhost:8000/api/contacts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(form.value)
+    })
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+
+    const data = await response.json()
+    console.log('Contact saved:', data)
+
+    // Reset form
+    form.value = { name: '', last_name: '', email: '', mobile_number: '', company: '', message: '' }
+    alert('Your message has been sent successfully!')
+  } catch (error) {
+    console.error('Error submitting form:', error)
+    alert('Something went wrong while sending your message.')
+  }
+}
+</script>
