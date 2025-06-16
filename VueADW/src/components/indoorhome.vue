@@ -1,9 +1,14 @@
+<script>
+import indoorinfo from '@/pages/indoorinfo.vue';
+</script>
+
+
 <template>
   <div class="card">
     <div class="rectangle" :style="{ backgroundImage: 'url(urlhierx2yayay)' }">
       <span class="label">Indoor</span>
     </div>
-    <button class="btn">Indoor Services</button>
+    <button href="indoorinfo" class="btn">Indoor Services</button>
   </div>
 </template>
 
