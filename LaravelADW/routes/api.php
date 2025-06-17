@@ -17,3 +17,5 @@ Route::get('/diensten/{id}', [DienstController::class, 'show']);
 Route::post('/login', [LoginController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/login/{id}', [LoginController::class, 'show']);
+
+Route::post('/auth', [LoginController::class, 'login']);

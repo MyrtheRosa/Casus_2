@@ -13,7 +13,7 @@
 
         <!-- Form -->
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-          <form @submit.prevent="handleLogin" class="flex flex-col gap-5">
+          <form @submit.prevent="submitForm" class="flex flex-col gap-5">
 
             <!-- Email -->
             <div>
@@ -22,7 +22,7 @@
               </label>
               <div class="mt-3">
                 <input
-                  v-model="email"
+                  v-model="login.email"
                   type="email"
                   name="email"
                   id="email"
@@ -42,7 +42,7 @@
               </div>
               <div class="mt-3">
                 <input
-                  v-model="password"
+                  v-model="login.password"
                   type="password"
                   name="password"
                   id="password"
@@ -68,7 +68,7 @@
             </div>
 
             <!-- Error message -->
-            <p v-if="error" class="text-red-600 text-center mt-2">{{ error }}</p>
+            <p v-if="login.error" class="text-red-600 text-center mt-2">{{ error }}</p>
 
           </form>
         </div>
@@ -86,6 +86,33 @@ const login = ref({
   password: ''
 })
 
+const submitForm = async () => {
+  try {
+    const response = await fetch('http://localhost:8000/api/auth', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(login.value)
+    })
+
+      if (!response.ok) {
+  console.error('Login failed:', data);
+  error.value = data.message || 'Login failed.';
+  return;
+}
+
+    const data = await response.json()
+    console.log('Contact saved:', data)
+
+    // Reset form
+    login.value = {email: '', password: '' }
+    alert('Your message has been sent successfully!')
+  } catch (error) {
+    console.error('Error submitting form:', error)
+    alert('Something went wrong while sending your message.')
+  }
+}
 
 const router = useRouter()
 
