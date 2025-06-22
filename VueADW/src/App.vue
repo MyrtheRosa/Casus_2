@@ -14,7 +14,7 @@ import Footer from './components/Footer.vue'
 
 const route = useRoute()
 
-// Hide Navbar and Footer on InboxPage only
-const isInboxPage = computed(() => route.name === 'Inbox')
+// Hide Navbar and Footer on InboxPage 
+const isInboxPage = computed(() => route.name === 'InboxPage' || route.name ==='ContactDetail')
 </script>
 
