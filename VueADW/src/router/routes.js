@@ -7,6 +7,8 @@ import DienstPage from "@/pages/DienstPage.vue";
 import ContactPage from "@/pages/ContactPage.vue";
 import PrivacyPolicy from "@/pages/PrivacyPolicy.vue";
 import TermsOfService from "@/pages/TermsOfService.vue";
+import indoorinfo from "@/pages/indoorinfo.vue";
+import outdoorinfo from "@/pages/outdoorinfo.vue";
 
 const routes = [
   {
@@ -49,9 +51,23 @@ const routes = [
     name: "TermsOfService",
     component: TermsOfService,
   },
+
+  {
+  path: "/indoorinfo",
+  name: "IndoorInfo",
+  component: indoorinfo
+},
+
+{
+  path: "/outdoorinfo", 
+  name: "OutdoorInfo",
+  component: outdoorinfo
+}
+
   // src/router/routes.js
 ];
 
+  
 const router = createRouter({
   history: createWebHistory(),
   routes

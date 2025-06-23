@@ -1,11 +1,12 @@
 <script setup>
-import indoorhome from '../components/indoorhome.vue';
-import outdoorhome from '../components/outdoorhome.vue';
-</script> 
+import IndoorHome from '../components/indoorhome.vue';
+import OutdoorHome from '../components/outdoorhome.vue';
+</script>
 
 <template>
-  <div class="container">
-    <indoorhome />
-    <outdoorhome />
+  <div class="flex justify-center items-center min-h-screen gap-4">
+    <IndoorHome />
+    <OutdoorHome />
   </div>
 </template>
+

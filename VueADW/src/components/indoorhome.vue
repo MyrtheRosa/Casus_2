@@ -1,16 +1,24 @@
-<script>
-import indoorinfo from '@/pages/indoorinfo.vue';
-</script>
+<script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter();
 
+function goToIndoorInfo() {
+  router.push('/indoorinfo');
+}
+</script>
 
 <template>
   <div class="card">
-    <div class="rectangle" :style="{ backgroundImage: 'url(urlhierx2yayay)' }">
+    <div
+      class="rectangle"
+      :style="{ backgroundImage: 'url(urlhierx2yayay)' }"
+    >
       <span class="label">Indoor</span>
     </div>
-    <button href="indoorinfo" class="btn">Indoor Services</button>
+    <button @click="goToIndoorInfo" class="btn">Indoor Services</button>
   </div>
 </template>
+
 
 <style scoped>
 .card {

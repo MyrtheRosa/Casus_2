@@ -58,7 +58,7 @@ import { ref } from 'vue';
 const services = ref([
   {
     id: 1,
-    name: 'Tegelwerk',
+    name: 'yamamama',
     description: '',
     longDescription: 'We provide deep cleaning services for your home interiors including kitchens, bathrooms, and living spaces.',
   },
