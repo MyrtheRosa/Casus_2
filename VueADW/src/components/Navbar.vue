@@ -1,4 +1,8 @@
-<!-- Navbar, sticky bovenaan het scherm -->
+<script>
+import LoginPage from '@/pages/LoginPage.vue';
+import ContactPage from '@/pages/ContactPage.vue';
+import DienstPage from '@/pages/DienstPage.vue';
+</script>
 <style scoped>
 
 nav {
@@ -37,7 +41,7 @@ main {
 </div>
 <div class="hidden lg:flex lg:gap-x-12 cursor-pointer">
     <a href="/" class="menu-item text-xl font-semibold">Home</a>
-    <a href="#" class="menu-item text-xl font-semibold">Diensten</a>
+    <a href="DienstPage" class="menu-item text-xl font-semibold">Diensten</a>
     <a href="ContactPage" class="menu-item text-xl font-semibold">Contact</a>
 </div>
 <div class="hidden lg:flex lg:flex-1 lg:justify-end">

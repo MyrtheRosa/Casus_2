@@ -125,7 +125,7 @@ onBeforeUnmount(() => {
                   <br>
                   <br>
                   Heeft u interesse of vragen? Leg het mij voor aan de hand van de contactgegevens onder het kopje
-                  <a href="/contact" class="text-green-600 hover:text-green-500">"Contact"</a>.
+                  <a href="/ContactPage" class="text-green-600 hover:text-green-500">"Contact"</a>.
                   <br>
                   <br>
                   U bent altijd welkom bij <a class="text-green-600">Allround Dienstverlening Willemsen</a>, gevestigd

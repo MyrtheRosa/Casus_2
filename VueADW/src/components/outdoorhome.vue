@@ -1,9 +1,20 @@
+<script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
+function goToOutdoorInfo() {
+  router.push('/outdoorinfo');
+}
+</script>
+
+
+
 <template>
   <div class="card">
     <div class="rectangle" :style="{ backgroundImage: 'url(url hier yayay)' }">
-      <span class="label">Outdoor</span>
+      <span class="label">Buitenwerk</span>
     </div>
-    <button class="btn">Outdoor Services</button>
+    <button @click="goToOutdoorInfo" class="btn">Bekijk diensten</button>
   </div>
 </template>
 

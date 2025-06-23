@@ -1,12 +1,24 @@
+<script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
+function goToIndoorInfo() {
+  router.push('/indoorinfo');
+}
+</script>
 
 <template>
   <div class="card">
-    <div class="rectangle" :style="{ backgroundImage: 'url(urlhierx2yayay)' }">
-      <span class="label">Indoor</span>
+    <div
+      class="rectangle"
+      :style="{ backgroundImage: 'url(urlhierx2yayay)' }"
+    >
+      <span class="label">Binnenwerk</span>
     </div>
-    <button class="btn">Indoor Services</button>
+    <button @click="goToIndoorInfo" class="btn">Bekijk diensten</button>
   </div>
 </template>
+
 
 <style scoped>
 .card {
