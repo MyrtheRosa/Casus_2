@@ -1,6 +1,6 @@
 <template>
   <div class="p-10 min-h-screen bg-gray-100">
-    <h1 class="text-3xl font-bold mb-6 text-center">Our Services</h1>
+    <h1 class="text-3xl font-bold mb-6 text-center">OUTDOOR SERVICES</h1>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       <div
@@ -56,82 +56,84 @@
 import { ref } from 'vue';
 
 const services = ref([
-  {
+ {
     id: 1,
-    name: 'yamamama',
-    description: '',
-    longDescription: 'We provide deep cleaning services for your home interiors including kitchens, bathrooms, and living spaces.',
+    name: 'Veranda’s / tuinhuisen',
+    description: 'Maatwerk veranda’s en tuinhuisjes.',
+    longDescription: 'Wij bouwen stijlvolle veranda’s en tuinhuisjes die naadloos aansluiten bij uw tuin en woning. Volledig afgestemd op uw wensen, duurzaam en professioneel geplaatst.',
   },
   {
     id: 2,
-    name: 'Badkamer',
-    description: '',
-    longDescription: 'Includes weeding, trimming, watering, and regular maintenance of your outdoor spaces.',
+    name: 'Glazen schuifwanden',
+    description: 'Moderne glazen wanden voor buitenruimtes.',
+    longDescription: 'Glazen schuifwanden bieden beschutting en behoud van zicht en licht. Ideaal voor veranda’s en overkappingen, met strakke afwerking en hoge kwaliteit glas.',
   },
   {
-    id:3 ,
-    name: 'Keuken' ,
-    description: '',
-    longDescription: '',
-
+    id: 3,
+    name: 'Straatwerk',
+    description: 'Bestrating en aanleg van tuinpaden.',
+    longDescription: 'Wij verzorgen het aanleggen van opritten, terrassen en paden met hoogwaardige bestrating. Strak gelegd en afgestemd op uw tuinontwerp.',
   },
-
   {
     id: 4,
-    name: ' Isolatie' ,
-    description: '',
-    longDescription: '',
-
+    name: 'Riolering & elektra',
+    description: 'Installatie buitenriolering en elektriciteit.',
+    longDescription: 'Veilige en correcte aanleg van buitenriolering en elektra. Voor onder andere tuinverlichting, buitenkeukens of werkplaatsen.',
   },
-
   {
-    id:5 ,
-    name: 'Vloeren' ,
-    description: '',
-    longDescription: '',
-
+    id: 5,
+    name: 'Gevelbekleding',
+    description: 'Moderne gevelbekleding voor buitenmuren.',
+    longDescription: 'Bekleding met keraliet, hout, sandwichpanelen, damwand of trespa. Voor een frisse uitstraling en duurzame bescherming van uw gevels.',
   },
-
   {
-    id: 6 ,
-    name: 'Vloerverwarming' ,
-    description: '',
-    longDescription: '',
-
+    id: 6,
+    name: 'Zetwerk',
+    description: 'Afwerking met sandwichpanelen en damwand.',
+    longDescription: 'Zetwerk met metalen profielen (sandwich/damwand) voor een nette en waterdichte afwerking. Meer informatie hierover op de zetwerkpagina.',
   },
-
   {
     id: 7,
-    name: 'Kozijnen plaatsen/vervangen ' ,
-    description: '',
-    longDescription: '',
-
+    name: 'Deuren (groot en klein)',
+    description: 'Plaatsing van binnen- en buitendeuren.',
+    longDescription: 'Wij leveren en plaatsen houten, kunststof of metalen deuren in elke maat. Ook voor schuren, tuinhuisjes of technische ruimtes.',
   },
-
   {
     id: 8,
-    name: 'Riolering & elektra' ,
-    description: '',
-    longDescription: '',
-
+    name: 'Tuinaanleg',
+    description: 'Volledige aanleg van uw tuin.',
+    longDescription: 'Van ontwerp tot uitvoering: wij leggen complete tuinen aan, inclusief grondwerk, bestrating, beplanting en verlichting.',
   },
-  
   {
     id: 9,
-    name: 'Maatwerk Tafels' ,
-    description: '',
-    longDescription: '',
-
+    name: 'Dakbedekking',
+    description: 'Daken professioneel bedekt en waterdicht.',
+    longDescription: 'Wij zorgen voor stevige en duurzame dakbedekking voor buitenruimtes zoals veranda’s of schuren. Inclusief isolatie indien gewenst.',
   },
-
   {
     id: 10,
-    name: 'Maatwerk Meubilair ' ,
-    description: '',
-    longDescription: '',
-
+    name: 'Stucwerk',
+    description: 'Strak en weersbestendig buitenstucwerk.',
+    longDescription: 'Buitenstucwerk voor gevels en muren met een gladde of decoratieve afwerking. Bescherming en uitstraling in één.',
   },
-
+  {
+    id: 11,
+    name: 'Airco-installaties',
+    description: 'Buitenunits en systemen voor airco.',
+    longDescription: 'Professionele plaatsing van airco-installaties inclusief buitenunits. Efficiënt, stil en afgestemd op uw wooncomfort.',
+  },
+  {
+    id: 12,
+    name: 'Zonnepanelen',
+    description: 'Duurzame energie via zonne-installaties.',
+    longDescription: 'Advies, levering en installatie van zonnepanelen op platte of schuine daken. Inclusief monitoring en optimalisatie.',
+  },
+  {
+    id: 13,
+    name: 'Screens',
+    description: 'Zonwering voor ramen en overkappingen.',
+    longDescription: 'Screens zijn een elegante manier om warmte en licht buiten te houden. Op maat gemaakt en elektrisch bedienbaar mogelijk.',
+  },
   
 ]);
 

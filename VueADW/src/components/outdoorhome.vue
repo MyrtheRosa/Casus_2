@@ -12,9 +12,9 @@ function goToOutdoorInfo() {
 <template>
   <div class="card">
     <div class="rectangle" :style="{ backgroundImage: 'url(url hier yayay)' }">
-      <span class="label">Outdoor</span>
+      <span class="label">Buitenwerk</span>
     </div>
-    <button @click="goToOutdoorInfo" class="btn">Outdoor Services</button>
+    <button @click="goToOutdoorInfo" class="btn">Bekijk diensten</button>
   </div>
 </template>
 

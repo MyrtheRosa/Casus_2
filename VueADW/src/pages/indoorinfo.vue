@@ -1,6 +1,6 @@
 <template>
   <div class="p-10 min-h-screen bg-gray-100">
-    <h1 class="text-3xl font-bold mb-6 text-center">Our Services</h1>
+    <h1 class="text-3xl font-bold mb-6 text-center">INDOOR SERVICES</h1>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       <div
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <!-- Modal -->
+   
     <div
       v-if="showModal"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -56,82 +56,73 @@
 import { ref } from 'vue';
 
 const services = ref([
-  {
+{
     id: 1,
     name: 'Tegelwerk',
-    description: '',
-    longDescription: 'We provide deep cleaning services for your home interiors including kitchens, bathrooms, and living spaces.',
+    description: 'Professionele betegeling voor elke ruimte.',
+    longDescription: 'Wij verzorgen tegelwerk voor badkamers, keukens en vloeren. Strak gelegd, duurzaam en stijlvol afgewerkt.',
   },
   {
     id: 2,
     name: 'Badkamer',
-    description: '',
-    longDescription: 'Includes weeding, trimming, watering, and regular maintenance of your outdoor spaces.',
+    description: 'Complete badkamerrenovaties op maat.',
+    longDescription: 'Van ontwerp tot realisatie: wij renoveren of bouwen uw badkamer met oog voor comfort, stijl en functionaliteit.',
+    
   },
   {
-    id:3 ,
-    name: 'Keuken' ,
-    description: '',
-    longDescription: '',
-
+    id: 3,
+    name: 'Keuken',
+    description: 'Keukenrenovaties en maatwerk keukens.',
+    longDescription: 'Wij ontwerpen en realiseren keukens die passen bij uw wensen, inclusief installaties, tegels en afwerking.',
+    
   },
-
   {
     id: 4,
-    name: ' Isolatie' ,
-    description: '',
-    longDescription: '',
-
+    name: 'Isolatie',
+    description: 'Duurzame isolatieoplossingen voor uw woning.',
+    longDescription: 'Wij verbeteren de energie-efficiëntie van uw huis met hoogwaardige isolatiematerialen voor vloer, muur en dak.',
+    
   },
-
   {
-    id:5 ,
-    name: 'Vloeren' ,
-    description: '',
-    longDescription: '',
-
+    id: 5,
+    name: 'Vloeren',
+    description: 'Luxe vloeren voor elke stijl en ruimte.',
+    longDescription: 'Van laminaat tot visgraatparket: wij leveren en leggen vloeren die passen bij uw interieur en budget.',
+    
   },
-
   {
-    id: 6 ,
-    name: 'Vloerverwarming' ,
-    description: '',
-    longDescription: '',
-
+    id: 6,
+    name: 'Vloerverwarming',
+    description: 'Comfortabele warmte met vloerverwarming.',
+    longDescription: 'Wij installeren energiezuinige vloerverwarming die zorgt voor gelijkmatige warmteverdeling in huis.',
+    
   },
-
   {
     id: 7,
-    name: 'Kozijnen plaatsen/vervangen ' ,
-    description: '',
-    longDescription: '',
-
+    name: 'Kozijnen plaatsen/vervangen',
+    description: 'Nieuwe kozijnen voor betere isolatie en uitstraling.',
+    longDescription: 'Wij plaatsen en vervangen houten, kunststof of aluminium kozijnen met aandacht voor duurzaamheid en design.',
+    
   },
-
   {
     id: 8,
-    name: 'Riolering & elektra' ,
-    description: '',
-    longDescription: '',
-
+    name: 'Riolering & elektra',
+    description: 'Installatie en renovatie van riolering en elektra.',
+    longDescription: 'Wij zorgen voor veilige en goed functionerende leidingen, aansluitingen en elektra volgens de nieuwste normen.',
+   
   },
-  
   {
     id: 9,
-    name: 'Maatwerk Tafels' ,
-    description: '',
-    longDescription: '',
-
+    name: 'Maatwerk Tafels',
+    description: 'Unieke tafels op maat gemaakt.',
+    longDescription: 'Van robuuste eettafels tot moderne werktafels – wij ontwerpen en maken tafels die perfect passen in uw interieur.',
   },
-
   {
     id: 10,
-    name: 'Maatwerk Meubilair ' ,
-    description: '',
-    longDescription: '',
-
-  },
-
+    name: 'Maatwerk Meubilair',
+    description: 'Meubels op maat voor elk interieur.',
+    longDescription: 'Wij ontwerpen en bouwen kasten, banken en andere meubelstukken die volledig afgestemd zijn op uw wensen.',
+  }
   
 ]);
 

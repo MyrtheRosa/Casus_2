@@ -13,9 +13,9 @@ function goToIndoorInfo() {
       class="rectangle"
       :style="{ backgroundImage: 'url(urlhierx2yayay)' }"
     >
-      <span class="label">Indoor</span>
+      <span class="label">Binnenwerk</span>
     </div>
-    <button @click="goToIndoorInfo" class="btn">Indoor Services</button>
+    <button @click="goToIndoorInfo" class="btn">Bekijk diensten</button>
   </div>
 </template>
 
