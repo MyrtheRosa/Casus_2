@@ -31,17 +31,14 @@ main {
 <div class="flex lg:flex-1">
     <a href="/" class="-m-1.5 p-1.5">
     <span class="sr-only">Your Company</span>
-    <img class="h-8 w-auto"
-        src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+    <img class="h-22 w-auto"
+        src="/images/adwLogo.png" alt="">
     </a>
 </div>
 <div class="hidden lg:flex lg:gap-x-12 cursor-pointer">
     <a href="/" class="menu-item text-xl font-semibold">Home</a>
     <a href="#" class="menu-item text-xl font-semibold">Diensten</a>
     <a href="ContactPage" class="menu-item text-xl font-semibold">Contact</a>
-</div>
-<div class="hidden lg:flex lg:flex-1 lg:justify-end">
-    <a href="LoginPage" class="menu-item text-xl font-semibold">Log in <span aria-hidden="true">&rarr;</span></a>
 </div>
 </nav>
 </template>
