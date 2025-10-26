@@ -1,6 +1,8 @@
 <script setup>
+import Navbar from '@/components/Navbar.vue'
 import indoorhome from '../components/indoorhome.vue';
 import outdoorhome from '../components/outdoorhome.vue';
+
 </script> 
 
 <template>
