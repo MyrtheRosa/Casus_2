@@ -13,16 +13,6 @@ function toggleAgreement() {
     <!-- Navbar solid/antraciet -->
     <Navbar :solid="true" />
 
-    <!-- Background Blob -->
-    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-         aria-hidden="true">
-      <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 
-                  bg-gradient-to-tr from-[#16a34a] to-[#06b6d4] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-           style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 
-                  52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-      </div>
-    </div>
-
     <main class="pt-36 lg:pt-44 px-6 lg:px-16 max-w-7xl mx-auto">
       <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
@@ -94,7 +84,7 @@ function toggleAgreement() {
               </label>
             </div>
 
-            <div class="sm:col-span-2 m-3">
+            <div class="sm:col-span-2">
               <button type="submit"
                       class="w-full rounded-md bg-green-600 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">
                 Verstuur bericht
