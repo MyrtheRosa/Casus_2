@@ -38,7 +38,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', handleScroll))
     <!-- Desktop menu -->
     <div class="hidden lg:flex lg:gap-x-12">
       <a href="/" class="menu-item text-lg font-semibold relative">Home</a>
-      <a href="#" class="menu-item text-lg font-semibold relative">Diensten</a>
+      <a href="/DienstPage" class="menu-item text-lg font-semibold relative">Diensten</a>
       <a href="/ContactPage" class="menu-item text-lg font-semibold relative">Contact</a>
     </div>
 

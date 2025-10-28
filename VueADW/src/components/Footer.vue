@@ -12,7 +12,7 @@
           <h4 class="text-xl font-semibold mb-3">Company</h4>
           <ul class="text-lg space-y-2 text-gray-400">
             <li><a href="/" class="hover:text-green-600">Home</a></li>
-            <li><a href="#" class="hover:text-green-600">Diensten</a></li>
+            <li><a href="/DienstPage" class="hover:text-green-600">Diensten</a></li>
             <li><a href="/ContactPage" class="hover:text-green-600">Contact</a></li>
           </ul>
         </div>
