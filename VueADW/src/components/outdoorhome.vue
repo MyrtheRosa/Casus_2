@@ -24,7 +24,9 @@
 
     <!-- Button -->
     <button class="btn">
+      <a href="/OutdoorPage">
       Outdoor Services
+      </a>
     </button>
   </div>
 </template>

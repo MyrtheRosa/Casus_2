@@ -167,7 +167,8 @@ async function handleSubmit(e) {
 
         <!-- Right: Contact Text -->
         <div class="flex-1">
-          <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Neem contact op!</h2>
+          <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Vragen? Neem contact op!</h2>
+          
           <p class="mt-2 text-lg leading-9 text-gray-600">
             Ik ben bereikbaar tussen <span class="text-green-600 font-semibold">8:00 en 18:00</span>
           </p>

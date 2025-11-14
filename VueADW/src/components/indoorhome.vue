@@ -24,7 +24,9 @@
 
     <!-- Button -->
     <button class="btn">
+      <a href="/IndoorPage">
       Indoor Services
+      </a>
     </button>
   </div>
 </template>
