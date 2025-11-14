@@ -7,6 +7,8 @@ import DienstPage from "@/pages/DienstPage.vue";
 import ContactPage from "@/pages/ContactPage.vue";
 import PrivacyPolicy from "@/pages/PrivacyPolicy.vue";
 import TermsOfService from "@/pages/TermsOfService.vue";
+import IndoorPage from "@/pages/IndoorPage.vue";
+import OutdoorPage from "@/pages/OutdoorPage.vue";
 
 const routes = [
   {
@@ -33,6 +35,16 @@ const routes = [
     path: "/DienstPage",
     name: "DienstPage",
     component: DienstPage,
+  },
+  {
+    path: "/IndoorPage",
+    name: "IndoorPage",
+    component: IndoorPage,
+  },
+  {
+    path: "/OutdoorPage",
+    name: "OutdoorPage",
+    component: OutdoorPage,
   },
   {
     path: "/ContactPage",
