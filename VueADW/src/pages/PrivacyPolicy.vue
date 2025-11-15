@@ -8,7 +8,8 @@ const lastUpdated = new Date().toLocaleDateString()
   <div class="relative bg-white min-h-screen">
     <!-- Navbar solid -->
     <Navbar :solid="true" />
-
+    <br/>
+    
     <main class="pt-36 lg:pt-44 px-6 lg:px-16 max-w-7xl mx-auto">
       <h1 class="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">Privacy Policy</h1>
       <p class="mb-6 text-sm text-gray-500">Effective Date: {{ lastUpdated }}</p>

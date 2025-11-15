@@ -61,7 +61,8 @@ async function handleSubmit(e) {
 <template>
   <div class="relative bg-white min-h-screen flex flex-col">
     <Navbar :solid="true" />
-
+    <br/>
+    
     <main class="flex-grow pt-36 lg:pt-44 px-6 lg:px-16 max-w-7xl mx-auto pb-32">
       <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
