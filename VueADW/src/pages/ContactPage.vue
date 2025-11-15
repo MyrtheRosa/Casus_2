@@ -198,7 +198,7 @@ async function handleSubmit(e) {
 
               <!-- PHONE LINK -->
               <a href="tel:+31612345678" class="text-lg font-medium text-gray-700 hover:text-green-600 transition">
-                +31 6 12 34 56 78
+                +31 6 30 24 27 75
               </a>
             </div>
 
@@ -218,7 +218,7 @@ async function handleSubmit(e) {
               <!-- EMAIL LINK -->
               <a href="mailto:info@jouwdomein.nl"
                 class="text-lg font-medium text-gray-700 hover:text-green-600 transition">
-                info@jouwdomein.nl
+                adwdronten@gmail.com
               </a>
             </div>
 
