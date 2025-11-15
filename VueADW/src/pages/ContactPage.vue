@@ -61,8 +61,8 @@ async function handleSubmit(e) {
 <template>
   <div class="relative bg-white min-h-screen flex flex-col">
     <Navbar :solid="true" />
-    <br/>
-    
+    <br />
+
     <main class="flex-grow pt-36 lg:pt-44 px-6 lg:px-16 max-w-7xl mx-auto pb-32">
       <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
@@ -75,38 +75,33 @@ async function handleSubmit(e) {
             </p>
           </div>
 
-          <form @submit="handleSubmit"
-                class="leading-9 mt-12 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+          <form @submit="handleSubmit" class="leading-9 mt-12 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
             <div>
               <label for="first-name" class="block text-sm font-semibold text-gray-900">Voornaam</label>
-              <input id="first-name" name="first-name" v-model="formData.firstName" type="text" required
-                     class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+              <input id="first-name" name="first-name" v-model="formData.firstName" type="text" required class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
                      outline outline-1 outline-gray-300 placeholder:text-gray-400 
-                     focus:outline-2 focus:outline-green-600"/>
+                     focus:outline-2 focus:outline-green-600" />
             </div>
 
             <div>
               <label for="last-name" class="block text-sm font-semibold text-gray-900">Achternaam</label>
-              <input id="last-name" name="last-name" v-model="formData.lastName" type="text" required
-                     class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+              <input id="last-name" name="last-name" v-model="formData.lastName" type="text" required class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
                      outline outline-1 outline-gray-300 placeholder:text-gray-400 
-                     focus:outline-2 focus:outline-green-600"/>
+                     focus:outline-2 focus:outline-green-600" />
             </div>
 
             <div class="sm:col-span-2">
               <label for="company" class="block text-sm font-semibold text-gray-900">Bedrijf</label>
-              <input id="company" name="company" v-model="formData.company" type="text"
-                     class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+              <input id="company" name="company" v-model="formData.company" type="text" class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
                      outline outline-1 outline-gray-300 placeholder:text-gray-400 
-                     focus:outline-2 focus:outline-green-600"/>
+                     focus:outline-2 focus:outline-green-600" />
             </div>
 
             <div class="sm:col-span-2">
               <label for="email" class="block text-sm font-semibold text-gray-900">E-mail</label>
-              <input id="email" name="email" v-model="formData.email" type="email" required
-                     class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+              <input id="email" name="email" v-model="formData.email" type="email" required class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
                      outline outline-1 outline-gray-300 placeholder:text-gray-400 
-                     focus:outline-2 focus:outline-green-600"/>
+                     focus:outline-2 focus:outline-green-600" />
             </div>
 
             <div class="sm:col-span-2">
@@ -114,31 +109,29 @@ async function handleSubmit(e) {
               <div class="mt-2 flex rounded-md bg-white outline outline-1 outline-gray-300 
                   focus-within:outline-2 focus-within:outline-green-600">
                 <select id="country" name="country"
-                        class="w-20 rounded-l-md py-2 pl-3 text-gray-500 focus:outline-none">
+                  class="w-20 rounded-l-md py-2 pl-3 text-gray-500 focus:outline-none">
                   <option>+31</option>
                   <option>+32</option>
                   <option>+49</option>
                 </select>
-                <input id="phone-number" name="phone-number" v-model="formData.phone" type="text" placeholder="612345678"
-                       class="flex-1 py-2 px-3 rounded-r-md focus:outline-none text-gray-900"/>
+                <input id="phone-number" name="phone-number" v-model="formData.phone" type="text"
+                  placeholder="612345678" class="flex-1 py-2 px-3 rounded-r-md focus:outline-none text-gray-900" />
               </div>
             </div>
 
             <div class="sm:col-span-2">
               <label for="message" class="block text-sm font-semibold text-gray-900">Bericht</label>
-              <textarea id="message" name="message" v-model="formData.message" rows="4" required
-                        class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+              <textarea id="message" name="message" v-model="formData.message" rows="4" required class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
                         outline outline-1 outline-gray-300 placeholder:text-gray-400 
                         focus:outline-2 focus:outline-green-600"></textarea>
             </div>
 
             <div class="sm:col-span-2 flex items-center gap-x-4">
               <button type="button" @click="toggleAgreement"
-                      :class="['flex w-9 h-4.2 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset transition-colors duration-200 ease-in-out', agreed ? 'bg-green-600 ring-green-600' : 'bg-gray-200 ring-gray-900/5']"
-                      role="switch"
-                      :aria-checked="agreed.toString()">
+                :class="['flex w-9 h-4.2 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset transition-colors duration-200 ease-in-out', agreed ? 'bg-green-600 ring-green-600' : 'bg-gray-200 ring-gray-900/5']"
+                role="switch" :aria-checked="agreed.toString()">
                 <span aria-hidden="true"
-                      :class="['size-4 transform rounded-full bg-white shadow ring-1 ring-gray-900/5 transition duration-200 ease-in-out', agreed ? 'translate-x-[18px]' : 'translate-x-0']"></span>
+                  :class="['size-4 transform rounded-full bg-white shadow ring-1 ring-gray-900/5 transition duration-200 ease-in-out', agreed ? 'translate-x-[18px]' : 'translate-x-0']"></span>
               </button>
               <label class="text-sm text-gray-600">
                 Door dit te selecteren, accepteert u onze
@@ -147,9 +140,7 @@ async function handleSubmit(e) {
             </div>
 
             <div class="sm:col-span-2 mt-4">
-              <button type="submit"
-                      :disabled="loading"
-                      class="w-full cursor-pointer rounded-md bg-green-600 px-4 py-3 text-sm font-semibold text-white 
+              <button type="submit" :disabled="loading" class="w-full cursor-pointer rounded-md bg-green-600 px-4 py-3 text-sm font-semibold text-white 
                       shadow-sm hover:bg-green-500 focus-visible:outline-2 focus-visible:outline-offset-2 
                       focus-visible:outline-green-600 transition disabled:opacity-60 disabled:cursor-not-allowed">
                 {{ loading ? 'Verzenden...' : 'Verstuur bericht' }}
@@ -159,7 +150,8 @@ async function handleSubmit(e) {
 
           <!-- Succesbericht -->
           <transition name="fade">
-            <div v-if="success" class="mt-8 p-4 border border-green-600 rounded-md bg-green-50 text-green-700 shadow-md">
+            <div v-if="success"
+              class="mt-8 p-4 border border-green-600 rounded-md bg-green-50 text-green-700 shadow-md">
               <p class="font-medium">✅ Bedankt voor je bericht!</p>
               <p class="text-sm">Ik neem zo snel mogelijk contact met je op.</p>
             </div>
@@ -169,22 +161,68 @@ async function handleSubmit(e) {
         <!-- Right: Contact Text -->
         <div class="flex-1">
           <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Vragen? Neem contact op!</h2>
-          
-          <p class="mt-2 text-lg leading-9 text-gray-600">
+
+          <p class="mt-6 text-lg leading-9.5 text-gray-600">
             Ik ben bereikbaar tussen <span class="text-green-600 font-semibold">8:00 en 18:00</span>
           </p>
-          <p class="mt-4 text-lg text-gray-600 leading-relaxed">
-            Heb je een vraag, een idee voor samenwerking, of wil je gewoon even sparren? Stuur me gerust een bericht! 
+
+          <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+            Heb je een vraag, een idee voor samenwerking, of wil je gewoon even sparren? Stuur me gerust een bericht!
             Als zelfstandig ondernemer sta ik altijd open voor persoonlijk contact en denk ik graag met je mee.
             <br><br>
-            Of je nu meer wilt weten over mijn diensten, een offerte wilt aanvragen, of even wilt kennismaken – ik hoor graag van je. 
+            Of je nu meer wilt weten over mijn diensten, een offerte wilt aanvragen, of even wilt kennismaken – ik hoor
+            graag van je.
             Je kunt me bereiken via het contactformulier, of direct een e-mail sturen.
             <br><br>
-            Omdat ik alles zelf doe, kan het soms iets langer duren voor ik reageer. 
+            Omdat ik alles zelf doe, kan het soms iets langer duren voor ik reageer.
             Wel doe ik mijn best om binnen 1 werkdag te antwoorden!
             <br><br>
             - Wytse Willemsen
           </p>
+          <br/>
+          <!-- CONTACT ICONS + LINKS -->
+          <div class="space-y-4">
+
+            <!-- PHONE -->
+            <div class="flex items-center space-x-3">
+              <!-- ICON -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-7 h-7 text-green-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 
+               0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a1.125 
+               1.125 0 00-1.173.417l-.97 1.293c-.251.334-.703.48-1.107.34a12.035 
+               12.035 0 01-7.143-7.143c-.14-.404.006-.856.34-1.107l1.293-.97a1.125 
+               1.125 0 00.417-1.173L7.738 3.102A1.125 1.125 0 006.647 2.25H5.25A3 
+               3 0 002.25 5.25v1.5z" />
+              </svg>
+
+              <!-- PHONE LINK -->
+              <a href="tel:+31612345678" class="text-lg font-medium text-gray-700 hover:text-green-600 transition">
+                +31 6 12 34 56 78
+              </a>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="flex items-center space-x-3">
+              <!-- ICON -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-7 h-7 text-green-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 
+               2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 
+               2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 
+               2.25m19.5 0v.243a2.25 2.25 0 01-1.07 
+               1.916l-7.5 4.615a2.25 2.25 0 01-2.31 
+               0L3.32 8.91A2.25 2.25 0 012.25 6.993V6.75" />
+              </svg>
+
+              <!-- EMAIL LINK -->
+              <a href="mailto:info@jouwdomein.nl"
+                class="text-lg font-medium text-gray-700 hover:text-green-600 transition">
+                info@jouwdomein.nl
+              </a>
+            </div>
+
+          </div>
         </div>
       </div>
     </main>
@@ -192,10 +230,13 @@ async function handleSubmit(e) {
 </template>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.4s ease;
 }
-.fade-enter-from, .fade-leave-to {
+
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 </style>
