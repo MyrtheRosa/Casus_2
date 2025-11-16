@@ -31,8 +31,7 @@ onMounted(() => {
     const interval = setInterval(() => {
         const total =
             indoorCards.value.length +
-            specialCards.value.length +
-            aannemerijCards.value.length;
+            specialCards.value.length;
 
         activeIndex.value = activeIndex.value.map((i, idx) => {
             let list;
@@ -40,11 +39,6 @@ onMounted(() => {
                 list = indoorCards.value[idx].images;
             else if (idx < indoorCards.value.length + specialCards.value.length)
                 list = specialCards.value[idx - indoorCards.value.length].images;
-            else
-                list =
-                    aannemerijCards.value[
-                        idx - indoorCards.value.length - specialCards.value.length
-                    ].images;
 
             return (i + 1) % list.length;
         });
@@ -173,11 +167,11 @@ const prevImage = () => {
             class="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
             @click.self="lightboxOpen = false"
         >
-            <button @click="prevImage" class="absolute left-8 text-white text-4xl font-bold">‹</button>
+            <button @click="prevImage" class="cursor-pointer absolute left-8 text-white text-4xl font-bold">‹</button>
 
             <img :src="lightboxImages[lightboxIndex]" class="max-h-[80vh] max-w-[90vw] rounded-xl shadow-2xl" />
 
-            <button @click="nextImage" class="absolute right-8 text-white text-4xl font-bold">›</button>
+            <button @click="nextImage" class="cursor-pointer absolute right-8 text-white text-4xl font-bold">›</button>
 
             <button @click="lightboxOpen = false" class="cursor-pointer absolute top-10 right-10 text-white text-3xl">
                 ✕
@@ -187,15 +181,38 @@ const prevImage = () => {
 </template>
 
 <style scoped>
+@keyframes slide {
+    0% {
+        transform: translateX(-50%) translateY(0) rotate(25deg);
+    }
+
+    50% {
+        transform: translateX(50%) translateY(10%) rotate(25deg);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0) rotate(25deg);
+    }
+}
+
+/* Fade-in animation for cards */
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-fadeIn {
     animation: fadeIn 0.8s ease forwards;
 }
 
+/* Smooth 3D transform on hover */
 .group:hover img {
     transition: transform 0.7s ease;
 }

@@ -216,7 +216,7 @@ async function handleSubmit(e) {
               </svg>
 
               <!-- EMAIL LINK -->
-              <a href="mailto:info@jouwdomein.nl"
+              <a href="mailto:adwdronten@gmail.com"
                 class="text-lg font-medium text-gray-700 hover:text-green-600 transition">
                 adwdronten@gmail.com
               </a>
