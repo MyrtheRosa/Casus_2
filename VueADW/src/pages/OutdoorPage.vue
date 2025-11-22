@@ -4,23 +4,23 @@ import Navbar from "../components/Navbar.vue";
 
 // ------ DATA FOR OUTDOOR CARDS ------
 const outdoorCards = ref([
-    { title: "Veranda/tuinhuis", images: ["../images/veranda1.jpg", "../images/veranda2.jpg", "../images/veranda3.jpg", "../images/veranda4.jpg"], description: "Prachtige veranda’s en tuinhuisjes volledig op maat." },
+    { title: "Veranda/tuinhuis", images: ["../images/Outdoor/Veranda/veranda1.jpg", "../images/Outdoor/Veranda/veranda2.jpg", "../images/Outdoor/Veranda/veranda3.jpg", "../images/Outdoor/Veranda/veranda4.jpg"], description: "Prachtige veranda’s en tuinhuisjes volledig op maat." },
     { title: "Glazen schuifwanden plaatsen", images: ["../images/schuifwand1.jpg", "../images/schuifwand2.jpg", "../images/schuifwand3.jpg", "../images/schuifwand4.jpg"], description: "Moderne glazen schuifwanden voor binnen en buiten." },
     { title: "Straten", images: ["../images/straten1.jpg", "../images/straten2.jpg", "../images/straten3.jpg", "../images/straten4.jpg"], description: "Professioneel bestraten van opritten, terrassen en paden." },
-    { title: "Riolering + elektra", images: ["../images/riolering1.jpg", "../images/riolering2.jpg", "../images/riolering3.jpg", "../images/riolering4.jpg"], description: "Vakkundige aanleg van leidingen en elektra buiten." },
-    { title: "Gevelbekleding", images: ["../images/gevel1.jpg", "../images/gevel2.jpg", "../images/gevel3.jpg", "../images/gevel4.jpg"], description: "Keraliet, hout, sandwich, damwand, Trespa en meer." },
+    { title: "Riolering + elektra", images: ["../images/Outdoor/Riolering/riolering1.jpg", "../images/Outdoor/Riolering/riolering2.jpg", "../images/Outdoor/Tuin/riolering3.jpg", "../images/Outdoor/Tuin/riolering4.jpg"], description: "Vakkundige aanleg van leidingen en elektra buiten." },
+    { title: "Gevelbekleding", images: ["../images/Outdoor/Gevelbekleding/gevel1.jpg", "../images/Outdoor/Gevelbekleding/gevel2.jpg", "../images/Outdoor/Gevelbekleding/gevel3.jpg"], description: "Keraliet, hout, sandwich, damwand, Trespa en meer." },
     { title: "Zetwerk", images: ["../images/zetwerk1.jpg", "../images/zetwerk2.jpg", "../images/zetwerk3.jpg", "../images/zetwerk4.jpg"], description: "Sandwich en damwand toepassingen voor elke constructie." },
-    { title: "Deuren plaatsen", images: ["../images/deuren1.jpg", "../images/deuren2.jpg", "../images/deuren3.jpg", "../images/deuren4.jpg"], description: "Groot en klein deuren professioneel geplaatst." },
+    { title: "Deuren plaatsen", images: ["../images/Outdoor/Deuren/deuren1.jpg", "../images/Outdoor/Deuren/deuren2.jpg", "../images/Outdoor/Deuren/deuren3.jpg", "../images/Outdoor/Deuren/deuren4.jpg"], description: "Groot en klein deuren professioneel geplaatst." },
 ]);
 
 // Specials
 const specialCards = ref([
-    { title: "Tuinaanleg", special: true, images: ["../images/tuinaanleg1.jpg", "../images/tuinaanleg2.jpg", "../images/tuinaanleg3.jpg", "../images/tuinaanleg4.jpg"], description: "Compleet tuinaanleg op maat en met oog voor detail." },
+    { title: "Tuinaanleg", special: true, images: ["../images/Outdoor/Tuin/tuinaanleg1.jpg", "../images/Outdoor/Tuin/tuinaanleg2.jpg", "../images/Outdoor/Tuin/tuinaanleg3.jpg", "../images/Outdoor/Tuin/tuinaanleg4.jpg"], description: "Compleet tuinaanleg op maat en met oog voor detail." },
 ]);
 
 // Aannemerij
 const aannemerijCards = ref([
-    { title: "Dak bekleding", images: ["../images/dak1.jpg", "../images/dak2.jpg", "../images/dak3.jpg", "../images/dak4.jpg"], description: "Professionele dakbedekking voor elk type dak." },
+    { title: "Dak bekleding", images: ["../images/Outdoor/Verbouw/dak1.jpg", "../images/Outdoor/Verbouw/dak2.jpg", "../images/Outdoor/Verbouw/dak3.jpg", "../images/Outdoor/Verbouw/dak4.jpg"], description: "Professionele dakbedekking voor elk type dak." },
     { title: "Stucen", images: ["../images/stucen1.jpg", "../images/stucen2.jpg", "../images/stucen3.jpg", "../images/stucen4.jpg"], description: "Strak stucwerk voor binnen en buiten." },
     { title: "Airco plaatsen", images: ["../images/airco1.jpg", "../images/airco2.jpg", "../images/airco3.jpg", "../images/airco4.jpg"], description: "Koeling en klimaatbeheersing professioneel geïnstalleerd." },
     { title: "Zonnepanelen plaatsen", images: ["../images/zonnepanelen1.jpg", "../images/zonnepanelen2.jpg", "../images/zonnepanelen3.jpg", "../images/zonnepanelen4.jpg"], description: "Duurzame energie door zonnepanelen op maat." },
@@ -174,13 +174,13 @@ const prevImage = () => {
         <!-- LIGHTBOX -->
         <div v-if="lightboxOpen" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
             @click.self="lightboxOpen = false">
-            <button @click="prevImage" class="absolute left-8 text-white text-4xl font-bold">
+            <button @click="prevImage" class="cursor-pointer absolute left-8 text-white text-4xl font-bold">
                 ‹
             </button>
 
             <img :src="lightboxImages[lightboxIndex]" class="max-h-[80vh] max-w-[90vw] rounded-xl shadow-2xl" />
 
-            <button @click="nextImage" class="absolute right-8 text-white text-4xl font-bold">
+            <button @click="nextImage" class="cursor-pointer absolute right-8 text-white text-4xl font-bold">
                 ›
             </button>
 

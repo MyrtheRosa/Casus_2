@@ -4,20 +4,20 @@ import Navbar from "../components/Navbar.vue";
 
 // ------ INDOOR CARDS ------
 const indoorCards = ref([
-    { title: "Tegelen", images: ["../images/tegelen1.jpg", "../images/tegelen2.jpg", "../images/tegelen3.jpg", "../images/tegelen4.jpg"], description: "Professioneel tegelwerk voor elke ruimte." },
-    { title: "Badkamer", images: ["../images/badkamer1.jpg", "../images/badkamer2.jpg", "../images/badkamer3.jpg", "../images/badkamer4.jpg"], description: "Complete badkamers op maat gemaakt." },
-    { title: "Keuken", images: ["../images/keuken1.jpg", "../images/keuken2.jpg", "../images/keuken3.jpg", "../images/keuken4.jpg"], description: "Strakke en moderne keukens volledig geplaatst." },
-    { title: "Isoleren", images: ["../images/isoleren1.jpg", "../images/isoleren2.jpg", "../images/isoleren3.jpg", "../images/isoleren4.jpg"], description: "Duurzame isolatie voor optimaal wooncomfort." },
-    { title: "Aanleg vloeren", images: ["../images/vloeren1.jpg", "../images/vloeren2.jpg", "../images/vloeren3.jpg", "../images/vloeren4.jpg"], description: "Hoogwaardige vloeren zorgvuldig geplaatst." },
-    { title: "Vloerverwarming", images: ["../images/vloerverwarming1.jpg", "../images/vloerverwarming2.jpg", "../images/vloerverwarming3.jpg", "../images/vloerverwarming4.jpg"], description: "Comfortabele en energiezuinige vloerverwarming." },
-    { title: "Kozijnen plaatsen/vervangen", images: ["../images/kozijnen1.jpg", "../images/kozijnen2.jpg", "../images/kozijnen3.jpg", "../images/kozijnen4.jpg"], description: "PVC, hout en aluminium kozijnen op maat." },
-    { title: "Riolering + elektra", images: ["../images/elektra1.jpg", "../images/elektra2.jpg", "../images/elektra3.jpg", "../images/elektra4.jpg"], description: "Volledige aanleg van riolering en elektriciteit." },
+    { title: "Tegelen", images: ["../images/Indoor/Vloeren/tegelen1.jpg", "../images/Indoor/Vloeren/tegelen2.jpg", "../images/Indoor/Vloeren/tegelen3.jpg", "../images/Indoor/Vloeren/tegelen4.jpg"], description: "Professioneel tegelwerk voor elke ruimte." },
+    { title: "Badkamer", images: ["../images/Indoor/Badkamer/badkamer1.jpg", "../images/Indoor/Badkamer/badkamer2.jpg", "../images/Indoor/Badkamer/badkamer3.jpg", "../images/Indoor/Badkamer/badkamer4.jpg"], description: "Complete badkamers op maat gemaakt." },
+    { title: "Keuken", images: ["../images/Indoor/keuken1.jpg", "../images/Indoor/keuken2.jpg", "../images/Indoor/keuken3.jpg", "../images/Indoor/keuken4.jpg"], description: "Strakke en moderne keukens volledig geplaatst." },
+    { title: "Isoleren", images: ["../images/Indoor/Isoleren/isoleren1.jpg", "../images/Indoor/Isoleren/isoleren2.jpg", "../images/Indoor/Verbouw/isoleren3.jpg", "../images/Indoor/Verbouw/isoleren4.jpg"], description: "Duurzame isolatie voor optimaal wooncomfort." },
+    { title: "Aanleg vloeren", images: ["../images/Indoor/Vloeren/vloeren1.jpg", "../images/Indoor/Vloeren/vloeren2.jpg", "../images/Indoor/Vloeren/vloeren3.jpg", "../images/Indoor/Vloeren/vloeren4.jpg"], description: "Hoogwaardige vloeren zorgvuldig geplaatst." },
+    { title: "Vloerverwarming", images: ["../images/Indoor/Vloeren/tegelen1.jpg", "../images/Indoor/Vloeren/vloerverwarming2.jpg"], description: "Comfortabele en energiezuinige vloerverwarming." },
+    { title: "Kozijnen plaatsen/vervangen", images: ["../images/Indoor/kozijnen1.jpg", "../images/Indoor/kozijnen2.jpg", "../images/Indoor/kozijnen3.jpg", "../images/kozijnen4.jpg"], description: "PVC, hout en aluminium kozijnen op maat." },
+    { title: "Riolering + elektra", images: ["../images/Indoor/elektra1.jpg", "../images/Indoor/elektra2.jpg", "../images/Indoor/elektra3.jpg", "../images/Indoor/elektra4.jpg"], description: "Volledige aanleg van riolering en elektriciteit." },
 ]);
 
 // ---- SPECIALS ----
 const specialCards = ref([
-    { title: "Tafels samenstellen", images: ["../images/tafel1.jpg", "../images/tafel2.jpg", "../images/tafel3.jpg", "../images/tafel4.jpg"], description: "Op maat gemaakte tafels in elke stijl." },
-    { title: "Meubilair samenstellen", images: ["../images/meubel1.jpg", "../images/meubel2.jpg", "../images/meubel3.jpg", "../images/meubel4.jpg"], description: "Kasten, meubels en maatwerk interieur." },
+    { title: "Tafels samenstellen", images: ["../images/Indoor/Specials/tafel1.jpg", "../images/Indoor/Specials/tafel2.jpg", "../images/Indoor/Specials/tafel3.jpg", "../images/Indoor/Specials/tafel4.jpg"], description: "Op maat gemaakte tafels in elke stijl." },
+    { title: "Meubilair samenstellen", images: ["../images/Indoor/Specials/meubel1.jpg", "../images/Indoor/Specials/meubel2.jpg", "../images/Indoor/Specials/meubel3.jpg", "../images/Indoor/Specials/meubel4.jpg"], description: "Kasten, meubels en maatwerk interieur." },
 ]);
 
 // ------ CAROUSEL STATE ------
