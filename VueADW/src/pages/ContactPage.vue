@@ -180,7 +180,7 @@ async function handleSubmit(e) {
             graag van je.
             Je kunt me bereiken via het contactformulier, of direct een e-mail sturen.
             <br /><br />
-            Omdat ik alles zelf doe, kan het soms iets langer duren voor ik reageer.
+            Wegens dat ikzelf ook hele dagen te vinden ben op de werkvloer, ben ik niet altijd direct bereikbaar.
             Wel doe ik mijn best om binnen 1 werkdag te antwoorden!
             <br /><br />
             - Wytse Willemsen

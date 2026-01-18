@@ -23,6 +23,26 @@ const outdoorCards = ref([
     description: "Prachtige veranda’s en tuinhuisjes volledig op maat."
   },
   {
+    title: "Deuren groot & klein",
+    images: [
+      "../images/Outdoor/DeurenGrootKlein/deur1.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur2.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur3.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur4.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur5.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur6.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur7.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur8.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur9.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur10.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur11.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur12.jpg",
+      "../images/Outdoor/DeurenGrootKlein/deur13.jpg",
+      
+    ],
+    description: "Deuren: groot en klein.",
+  },
+  {
     title: "Riolering",
     images: [
       "../images/Outdoor/Riolering/riolering1.jpg",
@@ -33,7 +53,7 @@ const outdoorCards = ref([
       "../images/Outdoor/Riolering/riolering6.jpg",
       "../images/Outdoor/Riolering/riolering7.jpg",
     ],
-    description: "Vakkundige aanleg van leidingen en elektra buiten."
+    description: "Vakkundige aanleg van leidingen en elektra buiten (ook binnenwerk)."
   },
   {
     title: "Gevelbekleding",
@@ -103,7 +123,7 @@ const outdoorCards = ref([
       "../images/Outdoor/Tuin/tuin53.jpg",
       "../images/Outdoor/Tuin/tuin54.jpg",
     ],
-    description: "Sandwich en damwand toepassingen voor elke constructie."
+    description: "Tuinaanleg en renovatie met professioneel vakwerk."
   },
   {
     title: "Verbouw",

@@ -174,17 +174,6 @@ const indoorCards = ref([
     ],
     description: "PVC, hout en aluminium kozijnen op maat."
   },
-
-  {
-    title: "Riolering",
-    images: [
-      "../images/Indoor/Riolering/riolering1.jpg",
-      "../images/Indoor/Riolering/riolering2.jpg",
-      "../images/Indoor/Riolering/riolering3.jpg",
-      "../images/Indoor/Riolering/riolering4.jpg",
-    ],
-    description: "Aanleg en renovatie van riolering."
-  },
 ]);
 
 // ---- SPECIALS ----
