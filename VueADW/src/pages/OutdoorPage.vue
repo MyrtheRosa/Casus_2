@@ -187,49 +187,26 @@ onBeforeUnmount(stopCarousel);
 
 /* ================= LIGHTBOX ================= */
 
+// ------ LIGHTBOX ------
 const lightboxOpen = ref(false);
 const lightboxImages = ref([]);
 const lightboxIndex = ref(0);
 
-let lightboxInterval = null;
-
-const startLightbox = () => {
-  stopLightbox();
-  lightboxInterval = setInterval(() => {
-    nextImage();
-  }, 4000);
-};
-
-const stopLightbox = () => {
-  if (lightboxInterval) {
-    clearInterval(lightboxInterval);
-    lightboxInterval = null;
-  }
-};
-
 const openLightbox = (images, index) => {
-  stopCarousel();                // ⛔ pauzeer cards
-  lightboxImages.value = images;
-  lightboxIndex.value = index;   // ✔ exact dezelfde index
-  lightboxOpen.value = true;
-  startLightbox();               // ▶️ eigen timer
-};
-
-const closeLightbox = () => {
-  stopLightbox();
-  lightboxOpen.value = false;
-  startCarousel();               // ▶️ cards weer starten
+    lightboxImages.value = images;
+    lightboxIndex.value = index;
+    lightboxOpen.value = true;
 };
 
 const nextImage = () => {
-  lightboxIndex.value =
-    (lightboxIndex.value + 1) % lightboxImages.value.length;
+    lightboxIndex.value =
+        (lightboxIndex.value + 1) % lightboxImages.value.length;
 };
 
 const prevImage = () => {
-  lightboxIndex.value =
-    (lightboxIndex.value - 1 + lightboxImages.value.length) %
-    lightboxImages.value.length;
+    lightboxIndex.value =
+        (lightboxIndex.value - 1 + lightboxImages.value.length) %
+        lightboxImages.value.length;
 };
 </script>
 
