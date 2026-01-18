@@ -24,15 +24,16 @@ async function handleSubmit(e) {
   success.value = false
 
   try {
-    const response = await fetch('https://formspree.io/f/xeoqdjgk', {
+    const response = await fetch('https://formspree.io/f/mbddgzke', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        subject: "Nieuw contactformulier bericht",
         Voornaam: formData.value.firstName,
         Achternaam: formData.value.lastName,
-        Bedrijf: formData.value.company,
+        Bedrijf: formData.value.company || "-",
         Email: formData.value.email,
-        Telefoonnummer: formData.value.phone,
+        Telefoonnummer: formData.value.phone || "-",
         Bericht: formData.value.message
       })
     })
@@ -75,41 +76,45 @@ async function handleSubmit(e) {
             </p>
           </div>
 
-          <form @submit="handleSubmit" class="leading-9 mt-12 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+          <form @submit="handleSubmit" class="leading-9 mt-12 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 max-w-full">
             <div>
               <label for="first-name" class="block text-sm font-semibold text-gray-900">Voornaam</label>
-              <input id="first-name" name="first-name" v-model="formData.firstName" type="text" required class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
-                     outline outline-1 outline-gray-300 placeholder:text-gray-400 
-                     focus:outline-2 focus:outline-green-600" />
+              <input id="first-name" name="first-name" v-model="formData.firstName" type="text" required
+                class="mt-2 w-full max-w-full sm:max-w-[400px] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+                       outline outline-1 outline-gray-300 placeholder:text-gray-400 
+                       focus:outline-2 focus:outline-green-600" />
             </div>
 
             <div>
               <label for="last-name" class="block text-sm font-semibold text-gray-900">Achternaam</label>
-              <input id="last-name" name="last-name" v-model="formData.lastName" type="text" required class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
-                     outline outline-1 outline-gray-300 placeholder:text-gray-400 
-                     focus:outline-2 focus:outline-green-600" />
+              <input id="last-name" name="last-name" v-model="formData.lastName" type="text" required
+                class="mt-2 w-full max-w-full sm:max-w-[400px] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+                       outline outline-1 outline-gray-300 placeholder:text-gray-400 
+                       focus:outline-2 focus:outline-green-600" />
             </div>
 
             <div class="sm:col-span-2">
               <label for="company" class="block text-sm font-semibold text-gray-900">Bedrijf</label>
-              <input id="company" name="company" v-model="formData.company" type="text" class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
-                     outline outline-1 outline-gray-300 placeholder:text-gray-400 
-                     focus:outline-2 focus:outline-green-600" />
+              <input id="company" name="company" v-model="formData.company" type="text"
+                class="mt-2 w-full max-w-full sm:max-w-[400px] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+                       outline outline-1 outline-gray-300 placeholder:text-gray-400 
+                       focus:outline-2 focus:outline-green-600" />
             </div>
 
             <div class="sm:col-span-2">
               <label for="email" class="block text-sm font-semibold text-gray-900">E-mail</label>
-              <input id="email" name="email" v-model="formData.email" type="email" required class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
-                     outline outline-1 outline-gray-300 placeholder:text-gray-400 
-                     focus:outline-2 focus:outline-green-600" />
+              <input id="email" name="email" v-model="formData.email" type="email" required
+                class="mt-2 w-full max-w-full sm:max-w-[400px] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+                       outline outline-1 outline-gray-300 placeholder:text-gray-400 
+                       focus:outline-2 focus:outline-green-600" />
             </div>
 
             <div class="sm:col-span-2">
               <label for="phone-number" class="block text-sm font-semibold text-gray-900">Telefoonnummer</label>
               <div class="mt-2 flex rounded-md bg-white outline outline-1 outline-gray-300 
-                  focus-within:outline-2 focus-within:outline-green-600">
+                  focus-within:outline-2 focus-within:outline-green-600 max-w-full sm:max-w-[400px]">
                 <select id="country" name="country"
-                  class="w-20 rounded-l-md py-2 pl-3 text-gray-500 focus:outline-none">
+                  class="w-20 sm:w-20 flex-none rounded-l-md py-2 pl-3 text-gray-500 focus:outline-none">
                   <option>+31</option>
                   <option>+32</option>
                   <option>+49</option>
@@ -121,9 +126,10 @@ async function handleSubmit(e) {
 
             <div class="sm:col-span-2">
               <label for="message" class="block text-sm font-semibold text-gray-900">Bericht</label>
-              <textarea id="message" name="message" v-model="formData.message" rows="4" required class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
-                        outline outline-1 outline-gray-300 placeholder:text-gray-400 
-                        focus:outline-2 focus:outline-green-600"></textarea>
+              <textarea id="message" name="message" v-model="formData.message" rows="4" required
+                class="mt-2 w-full max-w-full sm:max-w-[400px] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+                       outline outline-1 outline-gray-300 placeholder:text-gray-400 
+                       focus:outline-2 focus:outline-green-600"></textarea>
             </div>
 
             <div class="sm:col-span-2 flex items-center gap-x-4">
@@ -140,7 +146,7 @@ async function handleSubmit(e) {
             </div>
 
             <div class="sm:col-span-2 mt-4">
-              <button type="submit" :disabled="loading" class="w-full cursor-pointer rounded-md bg-green-600 px-4 py-3 text-sm font-semibold text-white 
+              <button type="submit" :disabled="loading || !agreed" class="w-full cursor-pointer rounded-md bg-green-600 px-4 py-3 text-sm font-semibold text-white 
                       shadow-sm hover:bg-green-500 focus-visible:outline-2 focus-visible:outline-offset-2 
                       focus-visible:outline-green-600 transition disabled:opacity-60 disabled:cursor-not-allowed">
                 {{ loading ? 'Verzenden...' : 'Verstuur bericht' }}
@@ -169,23 +175,22 @@ async function handleSubmit(e) {
           <p class="mt-6 text-lg text-gray-600 leading-relaxed">
             Heb je een vraag, een idee voor samenwerking, of wil je gewoon even sparren? Stuur me gerust een bericht!
             Als zelfstandig ondernemer sta ik altijd open voor persoonlijk contact en denk ik graag met je mee.
-            <br><br>
+            <br /><br />
             Of je nu meer wilt weten over mijn diensten, een offerte wilt aanvragen, of even wilt kennismaken – ik hoor
             graag van je.
             Je kunt me bereiken via het contactformulier, of direct een e-mail sturen.
-            <br><br>
+            <br /><br />
             Omdat ik alles zelf doe, kan het soms iets langer duren voor ik reageer.
             Wel doe ik mijn best om binnen 1 werkdag te antwoorden!
-            <br><br>
+            <br /><br />
             - Wytse Willemsen
           </p>
-          <br/>
+          <br />
           <!-- CONTACT ICONS + LINKS -->
           <div class="space-y-4">
 
             <!-- PHONE -->
             <div class="flex items-center space-x-3">
-              <!-- ICON -->
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-7 h-7 text-green-600">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 
@@ -196,7 +201,6 @@ async function handleSubmit(e) {
                3 0 002.25 5.25v1.5z" />
               </svg>
 
-              <!-- PHONE LINK -->
               <a href="tel:+31612345678" class="text-lg font-medium text-gray-700 hover:text-green-600 transition">
                 +31 6 30 24 27 75
               </a>
@@ -204,7 +208,6 @@ async function handleSubmit(e) {
 
             <!-- EMAIL -->
             <div class="flex items-center space-x-3">
-              <!-- ICON -->
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-7 h-7 text-green-600">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 
@@ -215,7 +218,6 @@ async function handleSubmit(e) {
                0L3.32 8.91A2.25 2.25 0 012.25 6.993V6.75" />
               </svg>
 
-              <!-- EMAIL LINK -->
               <a href="mailto:adwdronten@gmail.com"
                 class="text-lg font-medium text-gray-700 hover:text-green-600 transition">
                 adwdronten@gmail.com

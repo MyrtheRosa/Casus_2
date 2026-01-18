@@ -4,20 +4,213 @@ import Navbar from "../components/Navbar.vue";
 
 // ------ INDOOR CARDS ------
 const indoorCards = ref([
-    { title: "Tegelen", images: ["../images/Indoor/Vloeren/tegelen1.jpg", "../images/Indoor/Vloeren/tegelen2.jpg", "../images/Indoor/Vloeren/tegelen3.jpg", "../images/Indoor/Vloeren/tegelen4.jpg"], description: "Professioneel tegelwerk voor elke ruimte." },
-    { title: "Badkamer", images: ["../images/Indoor/Badkamer/badkamer1.jpg", "../images/Indoor/Badkamer/badkamer2.jpg", "../images/Indoor/Badkamer/badkamer3.jpg", "../images/Indoor/Badkamer/badkamer4.jpg"], description: "Complete badkamers op maat gemaakt." },
-    { title: "Keuken", images: ["../images/Indoor/keuken1.jpg", "../images/Indoor/keuken2.jpg", "../images/Indoor/keuken3.jpg", "../images/Indoor/keuken4.jpg"], description: "Strakke en moderne keukens volledig geplaatst." },
-    { title: "Isoleren", images: ["../images/Indoor/Isoleren/isoleren1.jpg", "../images/Indoor/Isoleren/isoleren2.jpg", "../images/Indoor/Verbouw/isoleren3.jpg", "../images/Indoor/Verbouw/isoleren4.jpg"], description: "Duurzame isolatie voor optimaal wooncomfort." },
-    { title: "Aanleg vloeren", images: ["../images/Indoor/Vloeren/vloeren1.jpg", "../images/Indoor/Vloeren/vloeren2.jpg", "../images/Indoor/Vloeren/vloeren3.jpg", "../images/Indoor/Vloeren/vloeren4.jpg"], description: "Hoogwaardige vloeren zorgvuldig geplaatst." },
-    { title: "Vloerverwarming", images: ["../images/Indoor/Vloeren/tegelen1.jpg", "../images/Indoor/Vloeren/vloerverwarming2.jpg"], description: "Comfortabele en energiezuinige vloerverwarming." },
-    { title: "Kozijnen plaatsen/vervangen", images: ["../images/Indoor/kozijnen1.jpg", "../images/Indoor/kozijnen2.jpg", "../images/Indoor/kozijnen3.jpg", "../images/kozijnen4.jpg"], description: "PVC, hout en aluminium kozijnen op maat." },
-    { title: "Riolering + elektra", images: ["../images/Indoor/elektra1.jpg", "../images/Indoor/elektra2.jpg", "../images/Indoor/elektra3.jpg", "../images/Indoor/elektra4.jpg"], description: "Volledige aanleg van riolering en elektriciteit." },
+  {
+    title: "Bedrijfsruimte",
+    images: [
+      // Kantoor
+      "../images/Indoor/Bedrijfsruimte/kantoor1.jpg",
+      "../images/Indoor/Bedrijfsruimte/kantoor2.jpg",
+      "../images/Indoor/Bedrijfsruimte/kantoor3.jpg",
+      "../images/Indoor/Bedrijfsruimte/kantoor4.jpg",
+
+      // Magazijn
+      "../images/Indoor/Bedrijfsruimte/magazijn1.jpg",
+      "../images/Indoor/Bedrijfsruimte/magazijn2.jpg",
+      "../images/Indoor/Bedrijfsruimte/magazijn3.jpg",
+      "../images/Indoor/Bedrijfsruimte/magazijn4.jpg",
+      "../images/Indoor/Bedrijfsruimte/magazijn5.jpg",
+      "../images/Indoor/Bedrijfsruimte/magazijn6.jpg",
+      "../images/Indoor/Bedrijfsruimte/magazijn7.jpg",
+    ],
+    description: "Professionele bedrijfsruimtes voor kantoor en magazijn."
+  },
+
+  {
+    title: "Badkamer & Toilet",
+    images: [
+      "../images/Indoor/BadkamerToilet/badkamer1.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer2.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer3.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer4.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer5.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer6.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer7.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer8.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer9.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer10.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer11.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer12.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer13.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer14.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer15.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer16.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer17.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer18.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer19.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer20.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer21.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer22.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer23.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer24.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer25.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer26.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer27.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer28.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer29.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer30.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer31.jpg",
+      "../images/Indoor/BadkamerToilet/badkamer32.jpg",
+      "../images/Indoor/BadkamerToilet/toilet1.jpg",
+    ],
+    description: "Complete badkamers en toiletten op maat."
+  },
+
+  {
+    title: "Verbouw",
+   images: [
+  "../images/Indoor/Verbouw/verbouw1.jpg",
+  "../images/Indoor/Verbouw/verbouw2.jpg",
+  "../images/Indoor/Verbouw/verbouw3.jpg",
+  "../images/Indoor/Verbouw/verbouw4.jpg",
+  "../images/Indoor/Verbouw/verbouw5.jpg",
+  "../images/Indoor/Verbouw/verbouw6.jpg",
+  "../images/Indoor/Verbouw/verbouw7.jpg",
+  "../images/Indoor/Verbouw/verbouw8.jpg",
+  "../images/Indoor/Verbouw/verbouw9.jpg",
+  "../images/Indoor/Verbouw/verbouw10.jpg",
+  "../images/Indoor/Verbouw/verbouw11.jpg",
+  "../images/Indoor/Verbouw/verbouw12.jpg",
+  "../images/Indoor/Verbouw/verbouw13.jpg",
+  "../images/Indoor/Verbouw/verbouw14.jpg",
+  "../images/Indoor/Verbouw/verbouw15.jpg",
+  "../images/Indoor/Verbouw/verbouw16.jpg",
+  "../images/Indoor/Verbouw/verbouw17.jpg",
+  "../images/Indoor/Verbouw/verbouw18.jpg",
+  "../images/Indoor/Verbouw/verbouw19.jpg",
+  "../images/Indoor/Verbouw/verbouw20.jpg",
+  "../images/Indoor/Verbouw/verbouw21.jpg",
+  "../images/Indoor/Verbouw/verbouw22.jpg",
+  "../images/Indoor/Verbouw/verbouw23.jpg",
+  "../images/Indoor/Verbouw/verbouw24.jpg",
+  "../images/Indoor/Verbouw/verbouw25.jpg",
+  "../images/Indoor/Verbouw/verbouw26.jpg",
+  "../images/Indoor/Verbouw/verbouw27.jpg",
+  "../images/Indoor/Verbouw/verbouw28.jpg",
+  "../images/Indoor/Verbouw/verbouw29.jpg",
+  "../images/Indoor/Verbouw/verbouw30.jpg",
+  "../images/Indoor/Verbouw/verbouw31.jpg",
+  "../images/Indoor/Verbouw/verbouw32.jpg",
+  "../images/Indoor/Verbouw/verbouw33.jpg",
+  "../images/Indoor/Verbouw/verbouw34.jpg",
+  "../images/Indoor/Verbouw/verbouw35.jpg",
+  "../images/Indoor/Verbouw/verbouw36.jpg",
+  "../images/Indoor/Verbouw/verbouw37.jpg",
+  "../images/Indoor/Verbouw/verbouw38.jpg",
+  "../images/Indoor/Verbouw/verbouw39.jpg",
+
+  "../images/Indoor/Verbouw/verbouw40.jpeg",
+  "../images/Indoor/Verbouw/verbouw41.jpeg",
+  "../images/Indoor/Verbouw/verbouw42.jpeg",
+  "../images/Indoor/Verbouw/verbouw43.jpeg",
+  "../images/Indoor/Verbouw/verbouw44.jpeg",
+],
+
+    description: "Verbouw en renovatie van complete ruimtes."
+  },
+
+  {
+    title: "Isoleren",
+    images: [
+      "../images/Indoor/Isoleren/isoleren1.jpg",
+      "../images/Indoor/Isoleren/isoleren2.jpg",
+    ],
+    description: "Duurzame isolatie voor optimaal wooncomfort."
+  },
+
+  {
+    title: "Vloeren",
+    images: [
+      "../images/Indoor/Vloeren/vloeren1.jpg",
+      "../images/Indoor/Vloeren/vloeren2.jpg",
+      "../images/Indoor/Vloeren/vloeren3.jpg",
+      "../images/Indoor/Vloeren/vloeren4.jpg",
+      "../images/Indoor/Vloeren/vloeren5.jpg",
+      "../images/Indoor/Vloeren/vloeren6.jpg",
+      "../images/Indoor/Vloeren/vloeren7.jpg",
+      "../images/Indoor/Vloeren/vloeren8.jpg",
+      "../images/Indoor/Vloeren/vloeren9.jpg",
+      "../images/Indoor/Vloeren/vloeren10.jpg",
+      "../images/Indoor/Vloeren/vloeren11.jpg",
+      "../images/Indoor/Vloeren/vloeren12.jpg",
+      "../images/Indoor/Vloeren/vloeren13.jpg",
+      "../images/Indoor/Vloeren/vloeren14.jpg",
+      "../images/Indoor/Vloeren/vloeren15.jpg",
+      "../images/Indoor/Vloeren/vloeren16.jpg",
+      "../images/Indoor/Vloeren/vloeren17.jpeg",
+      "../images/Indoor/Vloeren/vloeren18.jpeg",
+      "../images/Indoor/Vloeren/vloeren19.jpeg",
+      "../images/Indoor/Vloeren/vloeren20.jpeg",
+      "../images/Indoor/Vloeren/vloeren21.jpeg",
+      "../images/Indoor/Vloeren/vloeren22.jpeg",,
+    ],
+    description: "Hoogwaardige vloeren vakkundig gelegd."
+  },
+
+  {
+    title: "Kozijnen",
+    images: [
+      "../images/Indoor/Kozijnen/kozijn1.jpg",
+      "../images/Indoor/Kozijnen/kozijn2.jpg",
+      "../images/Indoor/Kozijnen/kozijn3.jpg",
+      "../images/Indoor/Kozijnen/kozijn4.jpeg",
+      "../images/Indoor/Kozijnen/kozijn5.jpeg",
+      "../images/Indoor/Kozijnen/kozijn6.jpeg",
+      "../images/Indoor/Kozijnen/kozijn7.jpeg",
+      "../images/Indoor/Kozijnen/kozijn8.jpeg",
+      "../images/Indoor/Kozijnen/kozijn9.jpeg",
+      "../images/Indoor/Kozijnen/kozijn10.jpeg",
+      "../images/Indoor/Kozijnen/kozijn11.jpeg",
+      "../images/Indoor/Kozijnen/kozijn12.jpeg",
+    ],
+    description: "PVC, hout en aluminium kozijnen op maat."
+  },
+
+  {
+    title: "Riolering",
+    images: [
+      "../images/Indoor/Riolering/riolering1.jpg",
+      "../images/Indoor/Riolering/riolering2.jpg",
+      "../images/Indoor/Riolering/riolering3.jpg",
+      "../images/Indoor/Riolering/riolering4.jpg",
+    ],
+    description: "Aanleg en renovatie van riolering."
+  },
 ]);
 
 // ---- SPECIALS ----
 const specialCards = ref([
-    { title: "Tafels samenstellen", images: ["../images/Indoor/Specials/tafel1.jpg", "../images/Indoor/Specials/tafel2.jpg", "../images/Indoor/Specials/tafel3.jpg", "../images/Indoor/Specials/tafel4.jpg"], description: "Op maat gemaakte tafels in elke stijl." },
-    { title: "Meubilair samenstellen", images: ["../images/Indoor/Specials/meubel1.jpg", "../images/Indoor/Specials/meubel2.jpg", "../images/Indoor/Specials/meubel3.jpg", "../images/Indoor/Specials/meubel4.jpg"], description: "Kasten, meubels en maatwerk interieur." },
+  {
+    title: "Speciaal Maatwerk",
+    images: [
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel1.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel2.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel3.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel4.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel5.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel6.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel7.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel8.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel9.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel10.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel11.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel12.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel13.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel14.jpg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel15.jpeg",
+      "../images/Indoor/SpecialsSpeciaalMaatwerk/meubel16.jpeg",
+    ],
+    description: "Uniek maatwerk: meubels en interieur op maat."
+  },
 ]);
 
 // ------ CAROUSEL STATE ------

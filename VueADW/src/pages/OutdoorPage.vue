@@ -4,13 +4,11 @@ import Navbar from "../components/Navbar.vue";
 
 // ------ DATA FOR OUTDOOR CARDS ------
 const outdoorCards = ref([
-    { title: "Veranda/tuinhuis", images: ["../images/Outdoor/Veranda/veranda1.jpg", "../images/Outdoor/Veranda/veranda2.jpg", "../images/Outdoor/Veranda/veranda3.jpg", "../images/Outdoor/Veranda/veranda4.jpg"], description: "Prachtige veranda’s en tuinhuisjes volledig op maat." },
-    { title: "Glazen schuifwanden plaatsen", images: ["../images/schuifwand1.jpg", "../images/schuifwand2.jpg", "../images/schuifwand3.jpg", "../images/schuifwand4.jpg"], description: "Moderne glazen schuifwanden voor binnen en buiten." },
-    { title: "Straten", images: ["../images/straten1.jpg", "../images/straten2.jpg", "../images/straten3.jpg", "../images/straten4.jpg"], description: "Professioneel bestraten van opritten, terrassen en paden." },
-    { title: "Riolering + elektra", images: ["../images/Outdoor/Riolering/riolering1.jpg", "../images/Outdoor/Riolering/riolering2.jpg", "../images/Outdoor/Tuin/riolering3.jpg", "../images/Outdoor/Tuin/riolering4.jpg"], description: "Vakkundige aanleg van leidingen en elektra buiten." },
+    { title: "Veranda/Tuinhuis", images: ["../images/Outdoor/Veranda/veranda1.jpg", "../images/Outdoor/Veranda/veranda2.jpg", "../images/Outdoor/Veranda/veranda3.jpg", "../images/Outdoor/Veranda/veranda4.jpg"], description: "Prachtige veranda’s en tuinhuisjes volledig op maat." },
+    { title: "Riolering", images: ["../images/Outdoor/Riolering/riolering1.jpg", "../images/Outdoor/Riolering/riolering2.jpg", "../images/Outdoor/Tuin/riolering3.jpg", "../images/Outdoor/Tuin/riolering4.jpg"], description: "Vakkundige aanleg van leidingen en elektra buiten." },
     { title: "Gevelbekleding", images: ["../images/Outdoor/Gevelbekleding/gevel1.jpg", "../images/Outdoor/Gevelbekleding/gevel2.jpg", "../images/Outdoor/Gevelbekleding/gevel3.jpg"], description: "Keraliet, hout, sandwich, damwand, Trespa en meer." },
-    { title: "Zetwerk", images: ["../images/zetwerk1.jpg", "../images/zetwerk2.jpg", "../images/zetwerk3.jpg", "../images/zetwerk4.jpg"], description: "Sandwich en damwand toepassingen voor elke constructie." },
-    { title: "Deuren plaatsen", images: ["../images/Outdoor/Deuren/deuren1.jpg", "../images/Outdoor/Deuren/deuren2.jpg", "../images/Outdoor/Deuren/deuren3.jpg", "../images/Outdoor/Deuren/deuren4.jpg"], description: "Groot en klein deuren professioneel geplaatst." },
+    { title: "Tuin", images: ["../images/zetwerk1.jpg", "../images/zetwerk2.jpg", "../images/zetwerk3.jpg", "../images/zetwerk4.jpg"], description: "Sandwich en damwand toepassingen voor elke constructie." },
+    { title: "Deuren Groot & Klein", images: ["../images/Outdoor/Deuren/deuren1.jpg", "../images/Outdoor/Deuren/deuren2.jpg", "../images/Outdoor/Deuren/deuren3.jpg", "../images/Outdoor/Deuren/deuren4.jpg"], description: "Groot en klein deuren professioneel geplaatst." },
 ]);
 
 // Specials
