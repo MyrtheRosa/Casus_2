@@ -1,84 +1,230 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount, watch } from "vue";
 import Navbar from "../components/Navbar.vue";
 
-// ------ DATA FOR OUTDOOR CARDS ------
+/* ================= OUTDOOR CARDS ================= */
+
 const outdoorCards = ref([
-    { title: "Veranda/Tuinhuis", images: ["../images/Outdoor/Veranda/veranda1.jpg", "../images/Outdoor/Veranda/veranda2.jpg", "../images/Outdoor/Veranda/veranda3.jpg", "../images/Outdoor/Veranda/veranda4.jpg"], description: "Prachtige veranda’s en tuinhuisjes volledig op maat." },
-    { title: "Riolering", images: ["../images/Outdoor/Riolering/riolering1.jpg", "../images/Outdoor/Riolering/riolering2.jpg", "../images/Outdoor/Tuin/riolering3.jpg", "../images/Outdoor/Tuin/riolering4.jpg"], description: "Vakkundige aanleg van leidingen en elektra buiten." },
-    { title: "Gevelbekleding", images: ["../images/Outdoor/Gevelbekleding/gevel1.jpg", "../images/Outdoor/Gevelbekleding/gevel2.jpg", "../images/Outdoor/Gevelbekleding/gevel3.jpg"], description: "Keraliet, hout, sandwich, damwand, Trespa en meer." },
-    { title: "Tuin", images: ["../images/zetwerk1.jpg", "../images/zetwerk2.jpg", "../images/zetwerk3.jpg", "../images/zetwerk4.jpg"], description: "Sandwich en damwand toepassingen voor elke constructie." },
-    { title: "Deuren Groot & Klein", images: ["../images/Outdoor/Deuren/deuren1.jpg", "../images/Outdoor/Deuren/deuren2.jpg", "../images/Outdoor/Deuren/deuren3.jpg", "../images/Outdoor/Deuren/deuren4.jpg"], description: "Groot en klein deuren professioneel geplaatst." },
+  {
+    title: "Veranda/Tuinhuis",
+    images: [
+      "../images/Outdoor/VerandaTuinhuis/veranda1.jpg",
+      "../images/Outdoor/VerandaTuinhuis/veranda2.jpg",
+      "../images/Outdoor/VerandaTuinhuis/veranda3.jpg",
+      "../images/Outdoor/VerandaTuinhuis/veranda4.jpg",
+      "../images/Outdoor/VerandaTuinhuis/veranda5.jpg",
+      "../images/Outdoor/VerandaTuinhuis/veranda6.jpg",
+      "../images/Outdoor/VerandaTuinhuis/veranda7.jpg",
+      "../images/Outdoor/VerandaTuinhuis/veranda8.jpg",
+      "../images/Outdoor/VerandaTuinhuis/veranda9.jpg",
+      "../images/Outdoor/VerandaTuinhuis/veranda10.jpg",
+      "../images/Outdoor/VerandaTuinhuis/veranda11.jpg",
+    ],
+    description: "Prachtige veranda’s en tuinhuisjes volledig op maat."
+  },
+  {
+    title: "Riolering",
+    images: [
+      "../images/Outdoor/Riolering/riolering1.jpg",
+      "../images/Outdoor/Riolering/riolering2.jpg",
+      "../images/Outdoor/Riolering/riolering3.jpg",
+      "../images/Outdoor/Riolering/riolering4.jpg",
+      "../images/Outdoor/Riolering/riolering5.jpg",
+      "../images/Outdoor/Riolering/riolering6.jpg",
+      "../images/Outdoor/Riolering/riolering7.jpg",
+    ],
+    description: "Vakkundige aanleg van leidingen en elektra buiten."
+  },
+  {
+    title: "Gevelbekleding",
+    images: [
+      "../images/Outdoor/Gevelbekleding/gevelbekleding1.jpg",
+      "../images/Outdoor/Gevelbekleding/gevelbekleding2.jpg",
+      "../images/Outdoor/Gevelbekleding/gevelbekleding3.jpg",
+      "../images/Outdoor/Gevelbekleding/gevelbekleding4.jpg",
+    ],
+    description: "Keraliet, hout, sandwich, damwand, Trespa en meer."
+  },
+  {
+    title: "Tuin",
+    images: [
+      "../images/Outdoor/Tuin/tuin1.jpg",
+      "../images/Outdoor/Tuin/tuin2.jpg",
+      "../images/Outdoor/Tuin/tuin3.jpg",
+      "../images/Outdoor/Tuin/tuin4.jpg",
+      "../images/Outdoor/Tuin/tuin5.jpg",
+      "../images/Outdoor/Tuin/tuin6.jpg",
+      "../images/Outdoor/Tuin/tuin7.jpg",
+      "../images/Outdoor/Tuin/tuin8.jpg",
+      "../images/Outdoor/Tuin/tuin9.jpg",
+      "../images/Outdoor/Tuin/tuin10.jpg",
+      "../images/Outdoor/Tuin/tuin11.jpg",
+      "../images/Outdoor/Tuin/tuin12.jpg",
+      "../images/Outdoor/Tuin/tuin13.jpg",
+      "../images/Outdoor/Tuin/tuin14.jpg",
+      "../images/Outdoor/Tuin/tuin15.jpg",
+      "../images/Outdoor/Tuin/tuin16.jpg",
+      "../images/Outdoor/Tuin/tuin17.jpg",
+      "../images/Outdoor/Tuin/tuin18.jpg",
+      "../images/Outdoor/Tuin/tuin19.jpg",
+      "../images/Outdoor/Tuin/tuin20.jpg",
+      "../images/Outdoor/Tuin/tuin21.jpg",
+      "../images/Outdoor/Tuin/tuin22.jpg",
+      "../images/Outdoor/Tuin/tuin23.jpg",
+      "../images/Outdoor/Tuin/tuin24.jpg",
+      "../images/Outdoor/Tuin/tuin25.jpg",
+      "../images/Outdoor/Tuin/tuin26.jpg",
+      "../images/Outdoor/Tuin/tuin27.jpg",
+      "../images/Outdoor/Tuin/tuin28.jpg",
+      "../images/Outdoor/Tuin/tuin29.jpg",
+      "../images/Outdoor/Tuin/tuin30.jpg",
+      "../images/Outdoor/Tuin/tuin31.jpg",
+      "../images/Outdoor/Tuin/tuin32.jpg",
+      "../images/Outdoor/Tuin/tuin33.jpg",
+      "../images/Outdoor/Tuin/tuin34.jpg",
+      "../images/Outdoor/Tuin/tuin35.jpg",
+      "../images/Outdoor/Tuin/tuin36.jpg",
+      "../images/Outdoor/Tuin/tuin37.jpg",
+      "../images/Outdoor/Tuin/tuin38.jpg",
+      "../images/Outdoor/Tuin/tuin39.jpg",
+      "../images/Outdoor/Tuin/tuin40.jpg",
+      "../images/Outdoor/Tuin/tuin41.jpg",
+      "../images/Outdoor/Tuin/tuin42.jpg",
+      "../images/Outdoor/Tuin/tuin43.jpg",
+      "../images/Outdoor/Tuin/tuin44.jpg",
+      "../images/Outdoor/Tuin/tuin45.jpg",
+      "../images/Outdoor/Tuin/tuin46.jpg",
+      "../images/Outdoor/Tuin/tuin47.jpg",
+      "../images/Outdoor/Tuin/tuin48.jpg",
+      "../images/Outdoor/Tuin/tuin49.jpg",
+      "../images/Outdoor/Tuin/tuin50.jpg",
+      "../images/Outdoor/Tuin/tuin51.jpg",
+      "../images/Outdoor/Tuin/tuin52.jpg",
+      "../images/Outdoor/Tuin/tuin53.jpg",
+      "../images/Outdoor/Tuin/tuin54.jpg",
+    ],
+    description: "Sandwich en damwand toepassingen voor elke constructie."
+  },
+  {
+    title: "Verbouw",
+    images: [
+      "../images/Outdoor/Verbouw/verbouw1.jpg",
+      "../images/Outdoor/Verbouw/verbouw2.jpg",
+      "../images/Outdoor/Verbouw/verbouw3.jpg",
+      "../images/Outdoor/Verbouw/verbouw4.jpg",
+      "../images/Outdoor/Verbouw/verbouw5.jpg",
+      "../images/Outdoor/Verbouw/verbouw6.jpg",
+      "../images/Outdoor/Verbouw/verbouw7.jpg",
+      "../images/Outdoor/Verbouw/verbouw8.jpg",
+      "../images/Outdoor/Verbouw/verbouw9.jpg",
+      "../images/Outdoor/Verbouw/verbouw10.jpg",
+      "../images/Outdoor/Verbouw/verbouw11.jpg",
+      "../images/Outdoor/Verbouw/verbouw12.jpg",
+      "../images/Outdoor/Verbouw/verbouw13.jpg",
+      "../images/Outdoor/Verbouw/verbouw14.jpg",
+      "../images/Outdoor/Verbouw/verbouw15.jpg",
+      "../images/Outdoor/Verbouw/verbouw16.jpg",
+      "../images/Outdoor/Verbouw/verbouw17.jpg",
+      "../images/Outdoor/Verbouw/verbouw18.jpg",
+      "../images/Outdoor/Verbouw/verbouw19.jpg",
+      "../images/Outdoor/Verbouw/verbouw20.jpg",
+      "../images/Outdoor/Verbouw/verbouw21.jpg",
+      "../images/Outdoor/Verbouw/verbouw22.jpg",
+      "../images/Outdoor/Verbouw/verbouw23.jpg",
+      "../images/Outdoor/Verbouw/verbouw24.jpg",
+      "../images/Outdoor/Verbouw/verbouw25.jpg",
+      "../images/Outdoor/Verbouw/verbouw26.jpg",
+    ],
+    description: "Verbouw en renovatie van complete ruimtes."
+  },
 ]);
 
-// Specials
-const specialCards = ref([
-    { title: "Tuinaanleg", special: true, images: ["../images/Outdoor/Tuin/tuinaanleg1.jpg", "../images/Outdoor/Tuin/tuinaanleg2.jpg", "../images/Outdoor/Tuin/tuinaanleg3.jpg", "../images/Outdoor/Tuin/tuinaanleg4.jpg"], description: "Compleet tuinaanleg op maat en met oog voor detail." },
-]);
+/* ================= CAROUSEL ================= */
 
-// Aannemerij
-const aannemerijCards = ref([
-    { title: "Dak bekleding", images: ["../images/Outdoor/Verbouw/dak1.jpg", "../images/Outdoor/Verbouw/dak2.jpg", "../images/Outdoor/Verbouw/dak3.jpg", "../images/Outdoor/Verbouw/dak4.jpg"], description: "Professionele dakbedekking voor elk type dak." },
-    { title: "Stucen", images: ["../images/stucen1.jpg", "../images/stucen2.jpg", "../images/stucen3.jpg", "../images/stucen4.jpg"], description: "Strak stucwerk voor binnen en buiten." },
-    { title: "Airco plaatsen", images: ["../images/airco1.jpg", "../images/airco2.jpg", "../images/airco3.jpg", "../images/airco4.jpg"], description: "Koeling en klimaatbeheersing professioneel geïnstalleerd." },
-    { title: "Zonnepanelen plaatsen", images: ["../images/zonnepanelen1.jpg", "../images/zonnepanelen2.jpg", "../images/zonnepanelen3.jpg", "../images/zonnepanelen4.jpg"], description: "Duurzame energie door zonnepanelen op maat." },
-    { title: "Screens", images: ["../images/screens1.jpg", "../images/screens2.jpg", "../images/screens3.jpg", "../images/screens4.jpg"], description: "Schermen en zonwering voor een perfect comfort." },
-]);
+const activeIndex = ref(outdoorCards.value.map(() => 0));
 
-// ------ CAROUSEL STATE ------
-const activeIndex = ref([
-    ...outdoorCards.value.map(() => 0),
-    ...specialCards.value.map(() => 0),
-    ...aannemerijCards.value.map(() => 0),
-]);
+let carouselInterval = null;
 
-// auto switching every 4s
-onMounted(() => {
-    const interval = setInterval(() => {
-        const totalCards = outdoorCards.value.length + specialCards.value.length + aannemerijCards.value.length;
-        activeIndex.value = activeIndex.value.map((i, idx) => {
-            let cardList;
-            if (idx < outdoorCards.value.length) cardList = outdoorCards.value[idx].images;
-            else if (idx < outdoorCards.value.length + specialCards.value.length) cardList = specialCards.value[idx - outdoorCards.value.length].images;
-            else cardList = aannemerijCards.value[idx - outdoorCards.value.length - specialCards.value.length].images;
-            return (i + 1) % cardList.length;
-        });
-    }, 4000);
+const startCarousel = () => {
+  stopCarousel();
+  carouselInterval = setInterval(() => {
+    activeIndex.value = activeIndex.value.map((i, idx) => {
+      const imgs = outdoorCards.value[idx].images;
+      return (i + 1) % imgs.length;
+    });
+  }, 4000);
+};
 
-    onBeforeUnmount(() => clearInterval(interval));
-});
+const stopCarousel = () => {
+  if (carouselInterval) {
+    clearInterval(carouselInterval);
+    carouselInterval = null;
+  }
+};
 
-// ------ LIGHTBOX ------
+onMounted(startCarousel);
+onBeforeUnmount(stopCarousel);
+
+/* ================= LIGHTBOX ================= */
+
 const lightboxOpen = ref(false);
 const lightboxImages = ref([]);
 const lightboxIndex = ref(0);
 
+let lightboxInterval = null;
+
+const startLightbox = () => {
+  stopLightbox();
+  lightboxInterval = setInterval(() => {
+    nextImage();
+  }, 4000);
+};
+
+const stopLightbox = () => {
+  if (lightboxInterval) {
+    clearInterval(lightboxInterval);
+    lightboxInterval = null;
+  }
+};
+
 const openLightbox = (images, index) => {
-    lightboxImages.value = images;
-    lightboxIndex.value = index;
-    lightboxOpen.value = true;
+  stopCarousel();                // ⛔ pauzeer cards
+  lightboxImages.value = images;
+  lightboxIndex.value = index;   // ✔ exact dezelfde index
+  lightboxOpen.value = true;
+  startLightbox();               // ▶️ eigen timer
+};
+
+const closeLightbox = () => {
+  stopLightbox();
+  lightboxOpen.value = false;
+  startCarousel();               // ▶️ cards weer starten
 };
 
 const nextImage = () => {
-    lightboxIndex.value = (lightboxIndex.value + 1) % lightboxImages.value.length;
+  lightboxIndex.value =
+    (lightboxIndex.value + 1) % lightboxImages.value.length;
 };
 
 const prevImage = () => {
-    lightboxIndex.value = (lightboxIndex.value - 1 + lightboxImages.value.length) % lightboxImages.value.length;
+  lightboxIndex.value =
+    (lightboxIndex.value - 1 + lightboxImages.value.length) %
+    lightboxImages.value.length;
 };
 </script>
+
 
 <template>
     <div class="relative bg-white min-h-screen flex flex-col">
         <Navbar :solid="true" />
 
-        <br/>
+        <br />
         <main class="flex-grow pt-36 lg:pt-44 px-6 lg:px-16 pb-10">
             <!-- PAGE TITLE -->
             <h1 class="text-4xl font-bold text-center mb-40 tracking-wide text-gray-800">
                 Outdoor Services
             </h1>
-            <br/>
+            <br />
 
             <!-- OUTDOOR GRID -->
             <section class="mb-28 mt-24">
@@ -94,67 +240,6 @@ const prevImage = () => {
                             <span
                                 class="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold text-center px-4 leading-snug drop-shadow-xl tracking-wide">
 
-                                {{ card.title }}
-                            </span>
-                            <div
-                                class="absolute -top-10 -left-20 w-40 h-40 rounded-full blur-3xl opacity-30 bg-white/20 pointer-events-none">
-                            </div>
-                        </div>
-                        <p class="mt-4 text-gray-700 text-center text-lg leading-relaxed">
-                            {{ card.description }}
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <br/>
-            <!-- SPECIALS -->
-            <section class="mb-28">
-                <h2 class="text-3xl font-semibold text-gray-800 mb-28 text-center">Specials</h2>
-            <br/>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
-                    <div v-for="(card, i) in specialCards" :key="card.title"
-                        class="group cursor-pointer animate-fadeIn">
-                        <div class="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform-gpu transition-all duration-700 group-hover:scale-[1.03]"
-                            @click="openLightbox(card.images, activeIndex[i + outdoorCards.length])">
-                            <img :src="card.images[activeIndex[i + outdoorCards.length]]"
-                                class="w-full h-full object-cover" />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-b from-emerald-400/30 via-emerald-600/50 to-emerald-800/70 pointer-events-none mix-blend-multiply">
-                            </div>
-                            <span
-                                class="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold text-center px-4 leading-snug drop-shadow-xl tracking-wide">
-
-                                {{ card.title }}
-                            </span>
-                            <div
-                                class="absolute -top-10 -left-20 w-40 h-40 rounded-full blur-3xl opacity-30 bg-white/20 pointer-events-none">
-                            </div>
-                        </div>
-                        <p class="mt-4 text-gray-700 text-center text-lg leading-relaxed">
-                            {{ card.description }}
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <br/>
-            <!-- AANNEMERIJ -->
-            <section class="mb-28">
-                <h2 class="text-3xl font-semibold text-gray-800 mb-28 text-center">Aannemerij</h2>
-                <br/>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
-                    <div v-for="(card, i) in aannemerijCards" :key="card.title"
-                        class="group cursor-pointer animate-fadeIn">
-                        <div class="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform-gpu transition-all duration-700 group-hover:scale-[1.03]"
-                            @click="openLightbox(card.images, activeIndex[i + outdoorCards.length + specialCards.length])">
-                            <img :src="card.images[activeIndex[i + outdoorCards.length + specialCards.length]]"
-                                class="w-full h-full object-cover" />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-b from-emerald-400/30 via-emerald-600/50 to-emerald-800/70 pointer-events-none mix-blend-multiply">
-                            </div>
-                            <span
-                                class="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold text-center px-4 leading-snug drop-shadow-xl tracking-wide">
                                 {{ card.title }}
                             </span>
                             <div
