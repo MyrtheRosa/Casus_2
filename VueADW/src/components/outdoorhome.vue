@@ -3,11 +3,11 @@
     <div
       class="rectangle outdoor relative overflow-hidden h-[40vh] lg:h-[62vh]"
       :style="{
-        backgroundImage: 'url(https://minnetonkaorchards.com/wp-content/uploads/2023/07/patio-bar.jpeg)',
+        backgroundImage: `url('../images/Outdoor/Tuin/tuin3.jpg')`,
       }"
     >
-      <!-- Gradient overlay (luxurious emerald) -->
-      <div class="absolute inset-0 bg-gradient-to-b from-emerald-400/30 via-emerald-600/50 to-emerald-800/70 pointer-events-none mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#C68642]/30 via-[#9C5A1A]/50 to-[#5A2E0C]/70 pointer-events-none mix-blend-multiply"></div>
+
 
       <!-- Soft glimmer / ambient glow -->
       <div
@@ -65,8 +65,9 @@
   background-position: center;
 }
 
+/* Ochre brown border */
 .rectangle.outdoor {
-  border: 3px solid #065F46; /* deep emerald green border */
+  border: 3px solid #9C5A1A;
 }
 
 .group:hover .rectangle {
@@ -74,17 +75,25 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 
+/* Warm ochre glow */
 .label {
   z-index: 10;
   text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(16, 185, 129, 0.7), 0 0 20px rgba(5, 95, 70, 0.8);
+  text-shadow:
+    0 0 10px rgba(198, 134, 66, 0.6),
+    0 0 20px rgba(156, 90, 26, 0.85);
 }
 
+/* Button ochre gradient */
 .btn {
   margin-top: 16px;
   padding: 12px 24px;
   border-radius: 12px;
-  background: linear-gradient(to right, #10B981, #059669);
+  background: linear-gradient(
+    to right,
+    #C68642,
+    #9C5A1A
+  );
   color: white;
   font-weight: 600;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -93,6 +102,7 @@
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 18px rgba(156, 90, 26, 0.45);
 }
+
 </style>

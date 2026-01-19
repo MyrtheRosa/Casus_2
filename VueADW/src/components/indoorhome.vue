@@ -3,13 +3,13 @@
     <div
       class="rectangle indoor relative overflow-hidden h-[40vh] lg:h-[62vh]"
       :style="{
-        backgroundImage: 'url(https://cdn.hoog.design/2023/01/25001806/VSB-Wellness-Luxe-poolhouse-met-complete-thuis-wellness-07.jpg)',
+        backgroundImage: `url('../images/Indoor/BadkamerToilet/badkamer28.jpg')`,
       }"
     >
-      <!-- Gradient overlay (luxurious gold) -->
-      <div class="absolute inset-0 bg-gradient-to-b from-yellow-300/25 via-yellow-500/40 to-yellow-700/60 pointer-events-none mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#3FA9D6]/25 via-[#005B8F]/40 to-[#003B5C]/60 pointer-events-none mix-blend-multiply"></div>
 
-      <!-- Soft glow / ambient shimmer -->
+
+      <!-- Soft glow / ambient shimmer -->  
       <div
         class="absolute -top-10 -left-20 w-40 h-40 bg-white/20 rounded-full blur-3xl animate-slide pointer-events-none"
       ></div>
@@ -65,8 +65,9 @@
   background-position: center;
 }
 
+/* Capri blue border */
 .rectangle.indoor {
-  border: 3px solid #FFD700; /* Gold border */
+  border: 3px solid #005B8F;
 }
 
 .group:hover .rectangle {
@@ -74,20 +75,25 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 
+/* Label with Capri glow */
 .label {
   z-index: 10;
   text-transform: uppercase;
-  /* Elegant warm golden glow */
-  text-shadow: 
-    0 0 10px rgba(255, 215, 0, 0.6),
-    0 0 20px rgba(255, 215, 0, 0.8);
+  text-shadow:
+    0 0 10px rgba(0, 91, 143, 0.6),
+    0 0 20px rgba(0, 91, 143, 0.85);
 }
 
+/* Button in Capri gradient */
 .btn {
   margin-top: 16px;
   padding: 12px 24px;
   border-radius: 12px;
-  background: linear-gradient(to right, #FACC15, #EAB308);
+  background: linear-gradient(
+    to right,
+    #3FA9D6,
+    #005B8F
+  );
   color: white;
   font-weight: 600;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -96,6 +102,7 @@
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 18px rgba(0, 91, 143, 0.45);
 }
+
 </style>

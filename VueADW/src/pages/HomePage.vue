@@ -11,7 +11,7 @@ import Navbar from '@/components/Navbar.vue'
     <section
       id="hero"
       class="relative h-screen bg-cover bg-center transition-all duration-500"
-      style="background-image: url('/images/homebackground.jpeg')">
+      style="background-image: url('../images/Indoor/Bedrijfsruimte/magazijn7.jpg')">
       <!-- Donkere overlay -->
       <div class="absolute inset-0 bg-black opacity-60"></div>
 

@@ -151,7 +151,7 @@ const indoorCards = ref([
       "../images/Indoor/Vloeren/vloeren19.jpeg",
       "../images/Indoor/Vloeren/vloeren20.jpeg",
       "../images/Indoor/Vloeren/vloeren21.jpeg",
-      "../images/Indoor/Vloeren/vloeren22.jpeg",,
+      "../images/Indoor/Vloeren/vloeren22.jpeg",
     ],
     description: "Hoogwaardige vloeren vakkundig gelegd."
   },
@@ -257,91 +257,120 @@ const prevImage = () => {
         <Navbar :solid="true" />
         <br/>
         
-        <main class="flex-grow pt-36 lg:pt-44 px-6 lg:px-16 pb-10">
+       <main class="flex-grow pt-36 lg:pt-44 px-6 lg:px-16 pb-10">
             
-            <!-- PAGE TITLE -->
-            <h1 class="text-4xl font-bold text-center mb-40 tracking-wide text-gray-800">
-                Indoor Services
-            </h1>
-            <br/>
+    <!-- PAGE TITLE -->
+    <h1 class="text-4xl font-bold text-center mb-40 tracking-wide text-[#2B2B2B]">
+        Indoor Services
+    </h1>
+    <br/>
 
-            <!-- INDOOR GRID -->
-            <section class="mb-28 mt-24">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+    <!-- INDOOR GRID -->
+    <section class="mb-28 mt-24">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
 
+            <div
+                v-for="(card, i) in indoorCards"
+                :key="card.title"
+                class="group cursor-pointer animate-fadeIn"
+            >
+                <div
+                    class="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform-gpu transition-all duration-700 group-hover:scale-[1.03]"
+                    @click="openLightbox(card.images, activeIndex[i])"
+                >
+                    <img
+                        :src="card.images[activeIndex[i]]"
+                        class="w-full h-full object-cover"
+                    />
+
+                    <!-- CAPRI GRADIENT (RAL 5019) -->
                     <div
-                        v-for="(card, i) in indoorCards"
-                        :key="card.title"
-                        class="group cursor-pointer animate-fadeIn"
-                    >
-                        <div
-                            class="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform-gpu transition-all duration-700 group-hover:scale-[1.03]"
-                            @click="openLightbox(card.images, activeIndex[i])"
-                        >
-                            <img :src="card.images[activeIndex[i]]" class="w-full h-full object-cover" />
+                        class="absolute inset-0 bg-gradient-to-b from-[#4FB3C8]/30 via-[#2E8FA5]/50 to-[#0F4C5C]/70 pointer-events-none mix-blend-multiply"
+                    ></div>
 
-                            <!-- GOLD GRADIENT -->
-                            <div
-                                class="absolute inset-0 bg-gradient-to-b from-yellow-300/30 via-yellow-500/50 to-yellow-700/70 pointer-events-none mix-blend-multiply"
-                            ></div>
-
-                            <span
-                                class="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold text-center px-4 drop-shadow-xl tracking-wide"
-                            >
-                                {{ card.title }}
-                            </span>
-                        </div>
-
-                        <p class="mt-4 text-gray-700 text-center text-lg leading-relaxed">
-                            {{ card.description }}
-                        </p>
-                    </div>
-
-                </div>
-            </section>
-            <br/>
-
-            <!-- SPECIALS -->
-            <section class="mb-28">
-                <h2 class="text-3xl font-semibold text-gray-800 mb-28 text-center">
-                    Specials
-                </h2>
-
-                <br/>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
-
+                    <!-- SOFT CAPRI GLOW -->
                     <div
-                        v-for="(card, i) in specialCards"
-                        :key="card.title"
-                        class="group cursor-pointer animate-fadeIn"
+                        class="absolute -top-10 -left-20 w-40 h-40 bg-white/20 rounded-full blur-3xl animate-slide pointer-events-none"
+                    ></div>
+
+                    <span
+                        class="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold text-center px-4 drop-shadow-xl tracking-wide"
+                        style="
+                          text-shadow:
+                            0 0 10px rgba(79, 179, 200, 0.6),
+                            0 0 20px rgba(46, 143, 165, 0.85);
+                        "
                     >
-                        <div
-                            class="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform-gpu transition-all duration-700 group-hover:scale-[1.03]"
-                            @click="openLightbox(card.images, activeIndex[i + indoorCards.length])"
-                        >
-                            <img :src="card.images[activeIndex[i + indoorCards.length]]" class="w-full h-full object-cover" />
-
-                            <!-- GOLD GRADIENT -->
-                            <div
-                                class="absolute inset-0 bg-gradient-to-b from-yellow-300/30 via-yellow-500/50 to-yellow-700/70 pointer-events-none mix-blend-multiply"
-                            ></div>
-
-                            <span
-                                class="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold text-center px-4 drop-shadow-xl tracking-wide"
-                            >
-                                {{ card.title }}
-                            </span>
-                        </div>
-
-                        <p class="mt-4 text-gray-700 text-center text-lg leading-relaxed">
-                            {{ card.description }}
-                        </p>
-                    </div>
-
+                        {{ card.title }}
+                    </span>
                 </div>
-            </section>
 
-        </main>
+                <!-- DESCRIPTION (ANTRACIET) -->
+                <p class="mt-4 text-[#2B2B2B] text-center text-lg leading-relaxed">
+                    {{ card.description }}
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <br/>
+
+    <!-- SPECIALS -->
+    <section class="mb-28">
+        <h2 class="text-3xl font-semibold text-gray-800 mb-28 text-center">
+            Specials
+        </h2>
+
+        <br/>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+
+            <div
+                v-for="(card, i) in specialCards"
+                :key="card.title"
+                class="group cursor-pointer animate-fadeIn"
+            >
+                <div
+                    class="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform-gpu transition-all duration-700 group-hover:scale-[1.03]"
+                    @click="openLightbox(card.images, activeIndex[i + indoorCards.length])"
+                >
+                    <img
+                        :src="card.images[activeIndex[i + indoorCards.length]]"
+                        class="w-full h-full object-cover"
+                    />
+
+                    <!-- CAPRI GRADIENT (RAL 5019) -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-[#4FB3C8]/30 via-[#2E8FA5]/50 to-[#0F4C5C]/70 pointer-events-none mix-blend-multiply"
+                    ></div>
+
+                    <!-- SOFT CAPRI GLOW -->
+                    <div
+                        class="absolute -top-10 -left-20 w-40 h-40 bg-white/20 rounded-full blur-3xl animate-slide pointer-events-none"
+                    ></div>
+
+                    <span
+                        class="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold text-center px-4 drop-shadow-xl tracking-wide"
+                        style="
+                          text-shadow:
+                            0 0 10px rgba(79, 179, 200, 0.6),
+                            0 0 20px rgba(46, 143, 165, 0.85);
+                        "
+                    >
+                        {{ card.title }}
+                    </span>
+                </div>
+
+                <!-- DESCRIPTION (ANTRACIET) -->
+                <p class="mt-4 text-[#2B2B2B] text-center text-lg leading-relaxed">
+                    {{ card.description }}
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
 
         <!-- LIGHTBOX -->
         <div

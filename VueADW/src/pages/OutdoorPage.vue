@@ -216,40 +216,61 @@ const prevImage = () => {
         <Navbar :solid="true" />
 
         <br />
-        <main class="flex-grow pt-36 lg:pt-44 px-6 lg:px-16 pb-10">
-            <!-- PAGE TITLE -->
-            <h1 class="text-4xl font-bold text-center mb-40 tracking-wide text-gray-800">
-                Outdoor Services
-            </h1>
-            <br />
+       <main class="flex-grow pt-36 lg:pt-44 px-6 lg:px-16 pb-10">
+    <!-- PAGE TITLE -->
+    <h1 class="text-4xl font-bold text-center mb-40 tracking-wide text-[#2F4F2F]">
+        Outdoor Services
+    </h1>
+    <br />
 
-            <!-- OUTDOOR GRID -->
-            <section class="mb-28 mt-24">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
-                    <div v-for="(card, i) in outdoorCards" :key="card.title"
-                        class="group cursor-pointer animate-fadeIn">
-                        <div class="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform-gpu transition-all duration-700 group-hover:scale-[1.03]"
-                            @click="openLightbox(card.images, activeIndex[i])">
-                            <img :src="card.images[activeIndex[i]]" class="w-full h-full object-cover" />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-b from-emerald-400/30 via-emerald-600/50 to-emerald-800/70 pointer-events-none mix-blend-multiply">
-                            </div>
-                            <span
-                                class="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold text-center px-4 leading-snug drop-shadow-xl tracking-wide">
+    <!-- OUTDOOR GRID -->
+    <section class="mb-28 mt-24">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+            <div
+                v-for="(card, i) in outdoorCards"
+                :key="card.title"
+                class="group cursor-pointer animate-fadeIn"
+            >
+                <div
+                    class="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform-gpu transition-all duration-700 group-hover:scale-[1.03]"
+                    @click="openLightbox(card.images, activeIndex[i])"
+                >
+                    <img
+                        :src="card.images[activeIndex[i]]"
+                        class="w-full h-full object-cover"
+                    />
 
-                                {{ card.title }}
-                            </span>
-                            <div
-                                class="absolute -top-10 -left-20 w-40 h-40 rounded-full blur-3xl opacity-30 bg-white/20 pointer-events-none">
-                            </div>
-                        </div>
-                        <p class="mt-4 text-gray-700 text-center text-lg leading-relaxed">
-                            {{ card.description }}
-                        </p>
-                    </div>
+                    <!-- OCHRE BROWN GRADIENT (RAL 3001) -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-[#8C3A2B]/30 via-[#7A2E22]/50 to-[#5C1F16]/70 pointer-events-none mix-blend-multiply"
+                    ></div>
+
+                    <span
+                        class="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold text-center px-4 leading-snug drop-shadow-xl tracking-wide"
+                        style="
+                          text-shadow:
+                            0 0 10px rgba(140, 58, 43, 0.6),
+                            0 0 20px rgba(92, 31, 22, 0.85);
+                        "
+                    >
+                        {{ card.title }}
+                    </span>
+
+                    <!-- SOFT AMBIENT GLOW -->
+                    <div
+                        class="absolute -top-10 -left-20 w-40 h-40 rounded-full blur-3xl opacity-30 bg-white/20 pointer-events-none"
+                    ></div>
                 </div>
-            </section>
-        </main>
+
+                <!-- DESCRIPTION (LEAF GREEN – RAL 6002) -->
+                <p class="mt-4 text-[#2F4F2F] text-center text-lg leading-relaxed">
+                    {{ card.description }}
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
 
         <!-- LIGHTBOX -->
         <div v-if="lightboxOpen" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
