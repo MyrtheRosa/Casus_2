@@ -1,6 +1,21 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, watch } from "vue";
+import { useHead } from '@vueuse/head'
 import Navbar from "../components/Navbar.vue";
+
+useHead({
+  title: 'Outdoor Diensten | Allround Dienstverlening Willemsen',
+  meta: [
+    {
+      name: 'description',
+      content: 'Ontdek de outdoor diensten van Allround Dienstverlening Willemsen: veranda’s, tuinhuisjes, deuren, riolering, gevelbekleding, tuinen en complete verbouwingen.'
+    },
+    {
+      name: 'keywords',
+      content: 'outdoor diensten, veranda, tuinhuis, deuren, riolering, gevelbekleding, tuin, verbouw, Allround Dienstverlening Willemsen'
+    }
+  ]
+});
 
 /* ================= OUTDOOR CARDS ================= */
 

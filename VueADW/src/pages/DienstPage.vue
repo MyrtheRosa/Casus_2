@@ -1,7 +1,24 @@
 <script setup>
+import { useHead } from '@vueuse/head'
 import Navbar from '../components/Navbar.vue';
 import Indoorhome from '../components/indoorhome.vue';
 import Outdoorhome from '../components/outdoorhome.vue';
+
+useHead({
+  title: 'Diensten | Allround Dienstverlening Willemsen',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Ontdek de diensten van Allround Dienstverlening Willemsen. Van indoor- tot outdoor werkzaamheden, onderhoud en klussen voor particulieren en bedrijven.'
+    },
+    {
+      name: 'keywords',
+      content:
+        'diensten ADW, indoor klussen, outdoor klussen, onderhoud woning, onderhoud bedrijf, bouwprojecten, Allround Dienstverlening Willemsen'
+    }
+  ]
+})
 </script>
 
 <template>

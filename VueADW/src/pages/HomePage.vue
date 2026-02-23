@@ -1,5 +1,23 @@
 <script setup>
+import { useHead } from '@vueuse/head'
 import Navbar from '@/components/Navbar.vue'
+
+
+useHead({
+  title: 'Allround Dienstverlening Willemsen | Klusbedrijf & Onderhoud',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Allround Dienstverlening Willemsen is uw partner voor aanleg, onderhoud en bouwprojecten. Betrouwbaar vakmanschap voor particulieren en bedrijven.'
+    },
+    {
+      name: 'keywords',
+      content:
+        'allround klusbedrijf, bouw en onderhoud, aanleg projecten, zzp klusbedrijf, renovatie en onderhoud'
+    }
+  ]
+})
 </script>
 
 <template>
@@ -8,9 +26,7 @@ import Navbar from '@/components/Navbar.vue'
     <Navbar />
 
     <!-- Hero Section -->
-    <section
-      id="hero"
-      class="relative h-screen bg-cover bg-center transition-all duration-500"
+    <section id="hero" class="relative h-screen bg-cover bg-center transition-all duration-500"
       style="background-image: url('../images/Indoor/Bedrijfsruimte/magazijn7.jpg')">
       <!-- Donkere overlay -->
       <div class="absolute inset-0 bg-black opacity-60"></div>
@@ -27,44 +43,23 @@ import Navbar from '@/components/Navbar.vue'
     <!-- Over ADW -->
     <section class="relative px-6 py-20 lg:px-8 bg-white text-gray-800">
       <div class="mx-auto max-w-6xl">
-        <h2 class="text-4xl font-semibold mb-8">Over ADW</h2>
+        <h2 class="text-4xl font-semibold mb-8">Over Mij</h2>
         <p class="text-lg leading-relaxed text-gray-600">
-          Allround Dienstverlening Willemsen (ADW) is opgericht door mij,
-                Wytse Willemsen, in februari 2016. ADW is ontstaan door de
-                verschillende uitgevoerde werkzaamheden. Zo ben ik in 2011
-                begonnen met tuinen aanleggen bij een bedrijf dat gespecialiseerd
-                is in het leggen van kunstgras. Aan de hand van aantrekkende
-                aanvragen voor soortgelijke werkzaamheden, maar ook voor
-                verschillende werkzaamheden in de agrarische sector, ben ik voor
-                mijzelf begonnen. Door de jaren heen heb ik vele disciplines
-                aangeleerd, van (kunst)gras leggen en bestrating, tot bezigheden
-                in de bouw, loodgieterij en wereld van elektriciteit. Daarnaast
-                heb ik een interesse ontwikkeld in het uitdenken en aanleggen van
-                tuinen.
-                <br /><br />
-                Door deze achtergrond in veelzijdigheid, is het voor mij makkelijk
-                geworden om integraal uw wensen uit te denken en te combineren.
-                Dit in tegenstelling tot bijvoorbeeld mijn ervaring in de bouw,
-                waar (te) vaak enkel op de eigen discipline wordt gelet en er zo
-                uitvoeringsfouten ontstaan. Door met u uw wensen en ideeën door te
-                spreken, kunnen we gezamenlijk tot een praktisch (en financieel)
-                haalbaar plan komen.
-                <br /><br />
-                Heeft u interesse of vragen? Leg het mij voor aan de hand van de
-                contactgegevens onder het kopje
-                <a
-                  href="/ContactPage"
-                  class="text-green-600 hover:text-green-500"
-                  >"Contact"</a
-                >.
-                <br /><br />
-                U bent altijd welkom bij
-                <span class="text-green-600 font-semibold"
-                  ><span style="color: rgb(31, 78, 121)">A</span>llround
-                  <span style="color: rgb(31, 78, 121)">D</span>ienstverlening
-                  <span style="color: rgb(31, 78, 121)">W</span>illemsen</span
-                >, gevestigd in Oud-Dronten.
-          </p>
+          Vanaf jongs af aan ben ik altijd bezig met bouw en klussen. Om van niet iets te maken. Met 2 rechterhanden
+          wilde ik mijn brood kunnen en blijven verdienen. Eentonig werk is niks voor mij, daarom blijf ik mij verdiepen
+          om mijn kennis en kunnen uit te breiden.
+          <br /><br />
+          Sinds een jaar of 10 ben ik werkzaam als zelfstandig ondernemer. Ik werk precies, zorgvuldig en neem u zoveel
+          mogelijk mee in het proces om samen het (gewenste/beoogte) resultaat te behalen.
+          <br /><br />
+          Heeft u vragen of wilt u werkzaamheden door mij willen laten uitvoeren? Dan kunt u altijd <a
+            href="/ContactPage" class="text-green-600 hover:text-green-500 hover:underline">contact</a> opnemen.
+          <br /><br />
+          U bent altijd welkom bij
+          <span class="text-green-600 font-semibold"><span style="color: rgb(31, 78, 121)">A</span>llround
+            <span style="color: rgb(31, 78, 121)">D</span>ienstverlening
+            <span style="color: rgb(31, 78, 121)">W</span>illemsen</span>.
+        </p>
       </div>
     </section>
 

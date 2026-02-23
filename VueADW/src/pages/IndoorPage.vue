@@ -1,6 +1,21 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import { useHead } from '@vueuse/head'
 import Navbar from "../components/Navbar.vue";
+
+useHead({
+  title: 'Indoor Diensten | Allround Dienstverlening Willemsen',
+  meta: [
+    {
+      name: 'description',
+      content: 'Bekijk de indoor diensten van Allround Dienstverlening Willemsen: bedrijfsruimtes, badkamers, verbouwingen, vloeren, kozijnen en maatwerk projecten.'
+    },
+    {
+      name: 'keywords',
+      content: 'indoor diensten, bedrijfsruimte, badkamer, toilet, verbouw, vloeren, kozijnen, maatwerk, Allround Dienstverlening Willemsen'
+    }
+  ]
+})
 
 // ------ INDOOR CARDS ------
 const indoorCards = ref([

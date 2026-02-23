@@ -1,6 +1,23 @@
 <script setup>
 import { ref } from 'vue'
+import { useHead } from '@vueuse/head'
 import Navbar from '@/components/Navbar.vue'
+
+useHead({
+  title: 'Contact | Allround Dienstverlening Willemsen',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Neem contact op met Allround Dienstverlening Willemsen. Gebruik het contactformulier of bereik Wytse Willemsen direct via telefoon of e-mail.'
+    },
+    {
+      name: 'keywords',
+      content:
+        'contact Allround Dienstverlening, klusbedrijf contact, vraag offerte, onderhoud en bouw contact, Wytse Willemsen'
+    }
+  ]
+})
 
 const agreed = ref(false)
 const formData = ref({
@@ -141,7 +158,7 @@ async function handleSubmit(e) {
               </button>
               <label class="text-sm text-gray-600">
                 Door dit te selecteren, accepteert u onze
-                <a href="/TermsOfService" class="font-semibold text-green-600">terms&nbsp;of&nbsp;service</a>.
+                <a href="/TermsOfService" class="font-semibold text-green-600 hover:underline">terms&nbsp;of&nbsp;service</a>.
               </label>
             </div>
 
@@ -178,7 +195,7 @@ async function handleSubmit(e) {
             <br /><br />
             Of je nu meer wilt weten over mijn diensten, een offerte wilt aanvragen, of even wilt kennismaken – ik hoor
             graag van je.
-            Je kunt me bereiken via het contactformulier, of direct een e-mail sturen.
+            Je kunt me bereiken via het contactformulier, of direct een e-mail te sturen.
             <br /><br />
             Wegens dat ikzelf ook hele dagen te vinden ben op de werkvloer, ben ik niet altijd direct bereikbaar.
             Wel doe ik mijn best om binnen 1 werkdag te antwoorden!
@@ -201,7 +218,7 @@ async function handleSubmit(e) {
                3 0 002.25 5.25v1.5z" />
               </svg>
 
-              <a href="tel:+31612345678" class="text-lg font-medium text-gray-700 hover:text-green-600 transition">
+              <a href="tel:+31612345678" class="text-lg font-medium text-gray-700 hover:text-green-600 transition hover:underline">
                 +31 6 30 24 27 75
               </a>
             </div>
@@ -219,7 +236,7 @@ async function handleSubmit(e) {
               </svg>
 
               <a href="mailto:adwdronten@gmail.com"
-                class="text-lg font-medium text-gray-700 hover:text-green-600 transition">
+                class="text-lg font-medium text-gray-700 hover:text-green-600 transition hover:underline">
                 adwdronten@gmail.com
               </a>
             </div>
