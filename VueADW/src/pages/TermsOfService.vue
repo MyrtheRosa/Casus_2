@@ -1,7 +1,22 @@
 <script setup>
 import Navbar from '@/components/Navbar.vue'
+import { useHead } from '@vueuse/head'
 
 const effectiveDate = new Date().toLocaleDateString()
+
+useHead({
+  title: 'Terms of Service | Allround Dienstverlening Willemsen',
+  meta: [
+    {
+      name: 'description',
+      content: 'Lees de Terms of Service van Allround Dienstverlening Willemsen. Informatie over gebruik van onze website, aansprakelijkheid, en uw rechten.'
+    },
+    {
+      name: 'keywords',
+      content: 'terms of service, gebruiksvoorwaarden, aansprakelijkheid, website regels, flevoland , Allround Dienstverlening Willemsen'
+    }
+  ]
+})
 </script>
 
 <template>

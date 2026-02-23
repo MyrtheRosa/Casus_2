@@ -1,7 +1,22 @@
 <script setup>
 import Navbar from '@/components/Navbar.vue'
+import { useHead } from '@vueuse/head'
 
 const lastUpdated = new Date().toLocaleDateString()
+
+useHead({
+  title: 'Privacybeleid | Allround Dienstverlening Willemsen',
+  meta: [
+    {
+      name: 'description',
+      content: 'Lees ons privacybeleid bij Allround Dienstverlening Willemsen. Ontdek hoe wij omgaan met uw gegevens, cookies, en uw rechten.'
+    },
+    {
+      name: 'keywords',
+      content: 'privacybeleid, cookies, gegevensbescherming, persoonsgegevens, flevoland, Allround Dienstverlening Willemsen'
+    }
+  ]
+})
 </script>
 
 <template>

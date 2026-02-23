@@ -14,7 +14,7 @@ useHead({
     {
       name: 'keywords',
       content:
-        'contact Allround Dienstverlening, klusbedrijf contact, vraag offerte, onderhoud en bouw contact, Wytse Willemsen'
+        'contact Allround Dienstverlening, flevoland, klusbedrijf contact, vraag offerte, onderhoud en bouw contact, Wytse Willemsen'
     }
   ]
 })

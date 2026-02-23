@@ -12,7 +12,7 @@ useHead({
     },
     {
       name: 'keywords',
-      content: 'indoor diensten, bedrijfsruimte, badkamer, toilet, verbouw, vloeren, kozijnen, maatwerk, Allround Dienstverlening Willemsen'
+      content: 'indoor diensten, flevoland, bedrijfsruimte, badkamer, toilet, verbouw, vloeren, kozijnen, maatwerk, Allround Dienstverlening Willemsen'
     }
   ]
 })

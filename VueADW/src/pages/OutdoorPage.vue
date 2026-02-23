@@ -12,7 +12,7 @@ useHead({
     },
     {
       name: 'keywords',
-      content: 'outdoor diensten, veranda, tuinhuis, deuren, riolering, gevelbekleding, tuin, verbouw, Allround Dienstverlening Willemsen'
+      content: 'outdoor diensten, flevoland, veranda, tuinhuis, deuren, riolering, gevelbekleding, tuin, verbouw, Allround Dienstverlening Willemsen'
     }
   ]
 });

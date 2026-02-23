@@ -14,7 +14,7 @@ useHead({
     {
       name: 'keywords',
       content:
-        'allround klusbedrijf, bouw en onderhoud, aanleg projecten, zzp klusbedrijf, renovatie en onderhoud'
+        'allround klusbedrijf, flevoland, bouw en onderhoud, aanleg projecten, zzp klusbedrijf, renovatie en onderhoud'
     }
   ]
 })

@@ -15,7 +15,7 @@ useHead({
     {
       name: 'keywords',
       content:
-        'diensten ADW, indoor klussen, outdoor klussen, onderhoud woning, onderhoud bedrijf, bouwprojecten, Allround Dienstverlening Willemsen'
+        'diensten ADW, flevoland, indoor klussen, outdoor klussen, onderhoud woning, onderhoud bedrijf, bouwprojecten, Allround Dienstverlening Willemsen'
     }
   ]
 })
