@@ -1,56 +1,106 @@
 <template>
-  <div class="card">
-    <div class="rectangle" :style="{ backgroundImage: 'url(url hier yayay)' }">
-      <span class="label">Outdoor</span>
+  <div class="card group">
+    <div
+      class="rectangle outdoor relative overflow-hidden h-[40vh] lg:h-[62vh]"
+      :style="{
+        backgroundImage: `url('/images/Outdoor/Tuin/tuin3.jpg')`,
+      }"
+    >
+      <div class="absolute inset-0 bg-gradient-to-b from-[#C68642]/30 via-[#9C5A1A]/50 to-[#5A2E0C]/70 pointer-events-none mix-blend-multiply"></div>
+
+
+      <!-- Soft glimmer / ambient glow -->
+      <div
+        class="absolute -top-10 -left-20 w-40 h-40 bg-white/15 rounded-full blur-3xl animate-slide pointer-events-none"
+      ></div>
+
+      <!-- Label in center -->
+      <span
+        class="label text-center text-white font-extrabold text-3xl lg:text-4xl z-10 drop-shadow-[0_3px_6px_rgba(0,0,0,0.4)] tracking-wide"
+      >
+        OUTDOOR
+      </span>
     </div>
-    <button class="btn">Outdoor Services</button>
+
+    <!-- Button -->
+    <router-link to="/OutdoorPage" class="btn">
+      Outdoor Services
+    </router-link>
   </div>
 </template>
 
+<script setup>
+// Geen script nodig
+</script>
+
 <style scoped>
+@keyframes slide {
+  0% { transform: translateX(-50%) translateY(0) rotate(25deg); }
+  50% { transform: translateX(50%) translateY(10%) rotate(25deg); }
+  100% { transform: translateX(-50%) translateY(0) rotate(25deg); }
+}
+
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh; 
+  width: 100%;
+  max-width: 350px;
   padding: 20px;
 }
 
 .rectangle {
-  width: 300px;
-  height: 80vh; 
-  background-color: #2a3b2a; 
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-size: cover;
+  background-position: center;
 }
 
+/* Ochre brown border */
+.rectangle.outdoor {
+  border: 3px solid #9C5A1A;
+}
+
+.group:hover .rectangle {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* Warm ochre glow */
 .label {
-  color: rgb(255, 233, 233);
-  font-size: 32px;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 10px rgba(198, 134, 66, 0.6),
+    0 0 20px rgba(156, 90, 26, 0.85);
 }
 
+/* Button ochre gradient */
 .btn {
+  margin-top: 16px;
   padding: 12px 24px;
-  border: none;
-  background-color: #000;
-  color: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
+  background: linear-gradient(
+    to right,
+    #C68642,
+    #9C5A1A
+  );
+  color: white;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(156, 90, 26, 0.45);
 }
+
 </style>

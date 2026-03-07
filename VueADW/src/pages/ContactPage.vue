@@ -1,141 +1,261 @@
+<script setup>
+import { ref } from 'vue'
+import { useHead } from '@vueuse/head'
+import Navbar from '@/components/Navbar.vue'
+
+useHead({
+  title: 'Contact | Allround Dienstverlening Willemsen',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Neem contact op met Allround Dienstverlening Willemsen. Gebruik het contactformulier of bereik Wytse Willemsen direct via telefoon of e-mail.'
+    },
+    {
+      name: 'keywords',
+      content:
+        'contact Allround Dienstverlening, flevoland, klusbedrijf contact, vraag offerte, onderhoud en bouw contact, Wytse Willemsen'
+    }
+  ]
+})
+
+const agreed = ref(false)
+const formData = ref({
+  firstName: '',
+  lastName: '',
+  company: '',
+  email: '',
+  phone: '',
+  message: ''
+})
+const success = ref(false)
+const loading = ref(false)
+
+function toggleAgreement() {
+  agreed.value = !agreed.value
+}
+
+async function handleSubmit(e) {
+  e.preventDefault()
+  loading.value = true
+  success.value = false
+
+  try {
+    const response = await fetch('https://formspree.io/f/mlgwopag', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        subject: "Nieuw contactformulier bericht",
+        Voornaam: formData.value.firstName,
+        Achternaam: formData.value.lastName,
+        Bedrijf: formData.value.company || "-",
+        Email: formData.value.email,
+        Telefoonnummer: formData.value.phone || "-",
+        Bericht: formData.value.message
+      })
+    })
+
+    if (response.ok) {
+      success.value = true
+      formData.value = {
+        firstName: '',
+        lastName: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: ''
+      }
+    } else {
+      alert('Er ging iets mis. Probeer het opnieuw.')
+    }
+  } catch (err) {
+    alert('Er is een fout opgetreden. Controleer je internetverbinding.')
+  } finally {
+    loading.value = false
+  }
+}
+</script>
+
 <template>
-    <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8 relative">
-        <!-- Background blob -->
-        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-            aria-hidden="true">
-            <div class="relative left-1/2 -z-10 aspect-[1155/678] w-[72rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#16a34a] to-[#06b6d4] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[115rem]"
-                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-            </div>
-        </div>
+  <div class="relative bg-white min-h-screen flex flex-col">
+    <Navbar :solid="true" />
+    <br />
 
-        <!-- Heading -->
-        <div class="flex flex-row grid grid-cols-2">
+    <main class="flex-grow pt-36 lg:pt-44 px-6 lg:px-16 max-w-7xl mx-auto pb-32">
+      <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+        <!-- Left: Contact Form -->
+        <div>
+          <div class="max-w-2xl">
+            <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Contactformulier</h2>
+            <p class="mt-3 text-lg text-gray-900 leading-8">
+              Laat gerust je bericht achter – ik neem zo snel mogelijk contact met je op!
+            </p>
+          </div>
+
+          <form @submit="handleSubmit" class="leading-9 mt-12 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 max-w-full">
             <div>
-                <div class="mx-auto max-w-2xl text-left">
-                    <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
-                        Contact Form
-                    </h2>
-                    <p class="mt-2 text-lg leading-22 text-gray-600">
-                        Laat gerust je bericht achter – ik neem zo snel mogelijk contact met je op!
-                    </p>
-                </div>
-
-                <!-- Contact Form -->
-                <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
-                    <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                        <div>
-                            <label for="first-name" class="block text-sm font-semibold text-gray-900">First name</label>
-                            <div class="mt-2.5">
-                                <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-green-600" />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="last-name" class="block text-sm font-semibold text-gray-900">Last name</label>
-                            <div class="mt-2.5">
-                                <input type="text" name="last-name" id="last-name" autocomplete="family-name"
-                                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-green-600" />
-                            </div>
-                        </div>
-
-                        <div class="sm:col-span-2">
-                            <label for="company" class="block text-sm font-semibold text-gray-900">Company</label>
-                            <div class="mt-2.5">
-                                <input type="text" name="company" id="company" autocomplete="organization"
-                                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-green-600" />
-                            </div>
-                        </div>
-
-                        <div class="sm:col-span-2">
-                            <label for="email" class="block text-sm font-semibold text-gray-900">Email</label>
-                            <div class="mt-2.5">
-                                <input type="email" name="email" id="email" autocomplete="email"
-                                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-green-600" />
-                            </div>
-                        </div>
-
-                        <div class="sm:col-span-2">
-                            <label for="phone-number" class="block text-sm font-semibold text-gray-900">Phone
-                                number</label>
-                            <div class="mt-2.5">
-                                <div
-                                    class="flex rounded-md bg-white outline outline-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:outline-green-600">
-                                    <div class="grid shrink-0 grid-cols-1 relative">
-                                        <select id="country" name="country" autocomplete="country" aria-label="Country"
-                                            class="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:outline-green-600 sm:text-sm">
-                                            <option>EU</option>
-                                        </select>
-                                        <svg class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
-                                            viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd"
-                                                d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <input type="text" name="phone-number" id="phone-number"
-                                        class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm"
-                                        placeholder="123-456-7890" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="sm:col-span-2">
-                            <label for="message" class="block text-sm font-semibold text-gray-900">Message</label>
-                            <div class="mt-2.5">
-                                <textarea name="message" id="message" rows="4"
-                                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-green-600"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-x-4 sm:col-span-2">
-                            <div class="flex h-6 items-center">
-                                <button type="button"
-                                    class="flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                    role="switch" aria-checked="false" aria-labelledby="switch-1-label">
-                                    <span class="sr-only">Agree to policies</span>
-                                    <span aria-hidden="true"
-                                        class="size-4 translate-x-0 transform rounded-full bg-white shadow ring-1 ring-gray-900/5 transition duration-200 ease-in-out"></span>
-                                </button>
-                            </div>
-                            <label class="text-sm text-gray-600" id="switch-1-label">
-                                Door dit te selecteren, accepteert u onze 
-                                <a href="#" class="font-semibold text-green-600">terms&nbsp;of&nbsp;service</a>.
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="mt-10">
-                        <button type="submit"
-                            class="cursor-pointer flex w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm leading-7 font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">
-                            Let's talk
-                        </button>
-                    </div>
-                </form>
+              <label for="first-name" class="block text-sm font-semibold text-gray-900">Voornaam</label>
+              <input id="first-name" name="first-name" v-model="formData.firstName" type="text" required
+                class="mt-2 w-full max-w-full sm:max-w-[400px] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+                       outline outline-1 outline-gray-300 placeholder:text-gray-400 
+                       focus:outline-2 focus:outline-green-600" />
             </div>
-            <div class="max-w-150">
-                <h2 class="text-xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
-                    Vragen? Neem contact op!
-                </h2>
-                <p class="mt-2 text-lg leading-22 text-gray-600">
-                    Ik ben bereikbaar tussen 8:00 en 18:00
-                </p>
-                <p class="mt-0 text-lg text-gray-600">
-                    Heb je een vraag, een idee voor samenwerking, of wil je gewoon even sparren? Stuur me gerust een
-                    bericht! Als zelfstandig ondernemer sta ik altijd open voor persoonlijk contact en denk ik graag met
-                    je mee.
-                    <br>
 
-                    Of je nu meer wilt weten over mijn diensten, een offerte wilt aanvragen, of even wilt kennismaken –
-                    ik hoor graag van je. Je kunt me bereiken via het contactformulier, of direct een e-mail sturen.
-                    <br>
-
-                    Omdat ik alles zelf doe, kan het soms iets langer duren voor ik reageer, maar ik doe mijn best om
-                    binnen 1 werkdag te antwoorden.
-                    <br>
-                    -Wytse Willemsen.
-                </p>
+            <div>
+              <label for="last-name" class="block text-sm font-semibold text-gray-900">Achternaam</label>
+              <input id="last-name" name="last-name" v-model="formData.lastName" type="text" required
+                class="mt-2 w-full max-w-full sm:max-w-[400px] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+                       outline outline-1 outline-gray-300 placeholder:text-gray-400 
+                       focus:outline-2 focus:outline-green-600" />
             </div>
+
+            <div class="sm:col-span-2">
+              <label for="company" class="block text-sm font-semibold text-gray-900">Bedrijf</label>
+              <input id="company" name="company" v-model="formData.company" type="text"
+                class="mt-2 w-full max-w-full sm:max-w-[400px] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+                       outline outline-1 outline-gray-300 placeholder:text-gray-400 
+                       focus:outline-2 focus:outline-green-600" />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="email" class="block text-sm font-semibold text-gray-900">E-mail</label>
+              <input id="email" name="email" v-model="formData.email" type="email" required
+                class="mt-2 w-full max-w-full sm:max-w-[400px] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+                       outline outline-1 outline-gray-300 placeholder:text-gray-400 
+                       focus:outline-2 focus:outline-green-600" />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="phone-number" class="block text-sm font-semibold text-gray-900">Telefoonnummer</label>
+              <div class="mt-2 flex rounded-md bg-white outline outline-1 outline-gray-300 
+                  focus-within:outline-2 focus-within:outline-green-600 max-w-full sm:max-w-[400px]">
+                <select id="country" name="country"
+                  class="w-20 sm:w-20 flex-none rounded-l-md py-2 pl-3 text-gray-500 focus:outline-none">
+                  <option>+31</option>
+                  <option>+32</option>
+                  <option>+49</option>
+                </select>
+                <input id="phone-number" name="phone-number" v-model="formData.phone" type="text"
+                  placeholder="612345678" class="flex-1 py-2 px-3 rounded-r-md focus:outline-none text-gray-900" />
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="message" class="block text-sm font-semibold text-gray-900">Bericht</label>
+              <textarea id="message" name="message" v-model="formData.message" rows="4" required
+                class="mt-2 w-full max-w-full sm:max-w-[400px] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 
+                       outline outline-1 outline-gray-300 placeholder:text-gray-400 
+                       focus:outline-2 focus:outline-green-600"></textarea>
+            </div>
+
+            <div class="sm:col-span-2 flex items-center gap-x-4">
+              <button type="button" @click="toggleAgreement"
+                :class="['flex w-9 h-4.2 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset transition-colors duration-200 ease-in-out', agreed ? 'bg-green-600 ring-green-600' : 'bg-gray-200 ring-gray-900/5']"
+                role="switch" :aria-checked="agreed.toString()">
+                <span aria-hidden="true"
+                  :class="['size-4 transform rounded-full bg-white shadow ring-1 ring-gray-900/5 transition duration-200 ease-in-out', agreed ? 'translate-x-[18px]' : 'translate-x-0']"></span>
+              </button>
+              <label class="text-sm text-gray-700">
+                Door dit te selecteren, accepteert u onze
+                <a href="/TermsOfService" class="font-semibold text-green-600 hover:underline">terms&nbsp;of&nbsp;service</a>.
+              </label>
+            </div>
+
+            <div class="sm:col-span-2 mt-4">
+              <button type="submit" :disabled="loading || !agreed" class="w-full cursor-pointer rounded-md bg-green-600 px-4 py-3 text-sm font-semibold text-white 
+                      shadow-sm hover:bg-green-500 focus-visible:outline-2 focus-visible:outline-offset-2 
+                      focus-visible:outline-green-600 transition disabled:opacity-60 disabled:cursor-not-allowed">
+                {{ loading ? 'Verzenden...' : 'Verstuur bericht' }}
+              </button>
+            </div>
+          </form>
+
+          <!-- Succesbericht -->
+          <transition name="fade">
+            <div v-if="success"
+              class="mt-8 p-4 border border-green-600 rounded-md bg-green-50 text-green-700 shadow-md">
+              <p class="font-medium">✅ Bedankt voor je bericht!</p>
+              <p class="text-sm">Ik neem zo snel mogelijk contact met je op.</p>
+            </div>
+          </transition>
         </div>
-    </div>
+
+        <!-- Right: Contact Text -->
+        <div class="flex-1">
+          <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Vragen? Neem contact op!</h2>
+
+          <p class="mt-6 text-lg leading-9.5 text-gray-900">
+            Ik ben bereikbaar tussen <span class="text-green-600 font-semibold">8:00 en 18:00</span>
+          </p>
+
+          <p class="mt-6 text-lg text-gray-900 leading-relaxed">
+            Heb je een vraag, een idee voor samenwerking, of wil je gewoon even sparren? Stuur me gerust een bericht!
+            Als zelfstandig ondernemer sta ik altijd open voor persoonlijk contact en denk ik graag met je mee.
+            <br /><br />
+            Of je nu meer wilt weten over mijn diensten, een offerte wilt aanvragen, of even wilt kennismaken – ik hoor
+            graag van je.
+            Je kunt me bereiken via het contactformulier, of direct een e-mail te sturen.
+            <br /><br />
+            Wegens dat ikzelf ook hele dagen te vinden ben op de werkvloer, ben ik niet altijd direct bereikbaar.
+            Wel doe ik mijn best om binnen 1 werkdag te antwoorden!
+            <br /><br />
+            - Wytse Willemsen
+          </p>
+          <br />
+          <!-- CONTACT ICONS + LINKS -->
+          <div class="space-y-4">
+
+            <!-- PHONE -->
+            <div class="flex items-center space-x-3 leading-10">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-7 h-7 text-green-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 
+               0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a1.125 
+               1.125 0 00-1.173.417l-.97 1.293c-.251.334-.703.48-1.107.34a12.035 
+               12.035 0 01-7.143-7.143c-.14-.404.006-.856.34-1.107l1.293-.97a1.125 
+               1.125 0 00.417-1.173L7.738 3.102A1.125 1.125 0 006.647 2.25H5.25A3 
+               3 0 002.25 5.25v1.5z" />
+              </svg>
+
+              <a href="tel:+31612345678" class="text-lg font-medium text-gray-700 hover:text-green-600 transition hover:underline">
+                +31 6 30 24 27 75
+              </a>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="flex items-center space-x-3 leading-10">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-7 h-7 text-green-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 
+               2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 
+               2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 
+               2.25m19.5 0v.243a2.25 2.25 0 01-1.07 
+               1.916l-7.5 4.615a2.25 2.25 0 01-2.31 
+               0L3.32 8.91A2.25 2.25 0 012.25 6.993V6.75" />
+              </svg>
+
+              <a href="mailto:info@adwillemsen.nl"
+                class="text-lg font-medium text-gray-700 hover:text-green-600 transition hover:underline">
+                info@adwillemsen.nl
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
