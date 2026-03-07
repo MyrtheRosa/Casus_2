@@ -3,7 +3,7 @@
     <div
       class="rectangle indoor relative overflow-hidden h-[40vh] lg:h-[62vh]"
       :style="{
-        backgroundImage: `url('../images/Indoor/BadkamerToilet/badkamer28.jpg')`,
+        backgroundImage: `url('/images/Indoor/BadkamerToilet/badkamer25.jpg')`,
       }"
     >
       <div class="absolute inset-0 bg-gradient-to-b from-[#3FA9D6]/25 via-[#005B8F]/40 to-[#003B5C]/60 pointer-events-none mix-blend-multiply"></div>
@@ -23,11 +23,9 @@
     </div>
 
     <!-- Button -->
-    <button class="btn">
-      <a href="/IndoorPage">
+    <router-link to="/IndoorPage" class="btn">
       Indoor Services
-      </a>
-    </button>
+    </router-link>
   </div>
 </template>
 

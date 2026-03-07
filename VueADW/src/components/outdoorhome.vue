@@ -3,7 +3,7 @@
     <div
       class="rectangle outdoor relative overflow-hidden h-[40vh] lg:h-[62vh]"
       :style="{
-        backgroundImage: `url('../images/Outdoor/Tuin/tuin3.jpg')`,
+        backgroundImage: `url('/images/Outdoor/Tuin/tuin3.jpg')`,
       }"
     >
       <div class="absolute inset-0 bg-gradient-to-b from-[#C68642]/30 via-[#9C5A1A]/50 to-[#5A2E0C]/70 pointer-events-none mix-blend-multiply"></div>
@@ -23,11 +23,9 @@
     </div>
 
     <!-- Button -->
-    <button class="btn">
-      <a href="/OutdoorPage">
+    <router-link to="/OutdoorPage" class="btn">
       Outdoor Services
-      </a>
-    </button>
+    </router-link>
   </div>
 </template>
 

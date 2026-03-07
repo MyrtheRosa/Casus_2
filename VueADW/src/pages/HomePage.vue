@@ -27,7 +27,7 @@ useHead({
 
     <!-- Hero Section -->
     <section id="hero" class="relative h-screen bg-cover bg-center transition-all duration-500"
-      style="background-image: url('../images/Indoor/Bedrijfsruimte/magazijn7.jpg')">
+      style="background-image: url('/images/Indoor/Bedrijfsruimte/magazijn7.jpg')">
       <!-- Donkere overlay -->
       <div class="absolute inset-0 bg-black opacity-60"></div>
 
@@ -41,11 +41,11 @@ useHead({
     </section>
 
     <!-- Over ADW -->
-    <section class="relative px-6 py-20 lg:px-8 bg-white text-gray-800">
+    <section class="relative px-6 py-20 lg:px-8 bg-white text-gray-900">
       <div class="mx-auto max-w-6xl">
         <h2 class="text-4xl font-semibold mb-8">Over Mij</h2>
-        <p class="text-lg leading-relaxed text-gray-600">
-          Vanaf jongs af aan ben ik altijd bezig met bouw en klussen. Om van niet iets te maken. Met 2 rechterhanden
+        <p class="text-lg leading-relaxed text-gray-900">
+          Vanaf jongs af aan ben ik altijd bezig met bouw en klussen. Om van niets iets te maken. Met 2 rechterhanden
           wilde ik mijn brood kunnen en blijven verdienen. Eentonig werk is niks voor mij, daarom blijf ik mij verdiepen
           om mijn kennis en kunnen uit te breiden.
           <br /><br />
@@ -65,7 +65,7 @@ useHead({
 
     <!-- Footer -->
     <footer class="bg-antraciet text-white py-10 text-center">
-      <p>&copy; 2025 Allround Dienstverlening Willemsen — Alle rechten voorbehouden</p>
+      <p>&copy; 2026 Allround Dienstverlening Willemsen — Alle rechten voorbehouden</p>
     </footer>
   </main>
 </template>

@@ -88,7 +88,7 @@ async function handleSubmit(e) {
         <div>
           <div class="max-w-2xl">
             <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Contactformulier</h2>
-            <p class="mt-3 text-lg text-gray-600 leading-8">
+            <p class="mt-3 text-lg text-gray-900 leading-8">
               Laat gerust je bericht achter – ik neem zo snel mogelijk contact met je op!
             </p>
           </div>
@@ -156,7 +156,7 @@ async function handleSubmit(e) {
                 <span aria-hidden="true"
                   :class="['size-4 transform rounded-full bg-white shadow ring-1 ring-gray-900/5 transition duration-200 ease-in-out', agreed ? 'translate-x-[18px]' : 'translate-x-0']"></span>
               </button>
-              <label class="text-sm text-gray-600">
+              <label class="text-sm text-gray-700">
                 Door dit te selecteren, accepteert u onze
                 <a href="/TermsOfService" class="font-semibold text-green-600 hover:underline">terms&nbsp;of&nbsp;service</a>.
               </label>
@@ -185,11 +185,11 @@ async function handleSubmit(e) {
         <div class="flex-1">
           <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Vragen? Neem contact op!</h2>
 
-          <p class="mt-6 text-lg leading-9.5 text-gray-600">
+          <p class="mt-6 text-lg leading-9.5 text-gray-900">
             Ik ben bereikbaar tussen <span class="text-green-600 font-semibold">8:00 en 18:00</span>
           </p>
 
-          <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+          <p class="mt-6 text-lg text-gray-900 leading-relaxed">
             Heb je een vraag, een idee voor samenwerking, of wil je gewoon even sparren? Stuur me gerust een bericht!
             Als zelfstandig ondernemer sta ik altijd open voor persoonlijk contact en denk ik graag met je mee.
             <br /><br />
@@ -207,7 +207,7 @@ async function handleSubmit(e) {
           <div class="space-y-4">
 
             <!-- PHONE -->
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-3 leading-10">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-7 h-7 text-green-600">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 
@@ -224,7 +224,7 @@ async function handleSubmit(e) {
             </div>
 
             <!-- EMAIL -->
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-3 leading-10">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-7 h-7 text-green-600">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 
@@ -235,9 +235,9 @@ async function handleSubmit(e) {
                0L3.32 8.91A2.25 2.25 0 012.25 6.993V6.75" />
               </svg>
 
-              <a href="mailto:adwdronten@gmail.com"
+              <a href="mailto:info@adwillemsen.nl"
                 class="text-lg font-medium text-gray-700 hover:text-green-600 transition hover:underline">
-                adwdronten@gmail.com
+                info@adwillemsen.nl
               </a>
             </div>
 
